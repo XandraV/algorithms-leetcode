@@ -22,8 +22,12 @@ function mergeTwoLists(list1, list2) {
     // move the pointer to the next otherwise the previous(or current at this point) will be overwritten
     curr = curr.next;
   }
+  // adding the last node to the end (either/or)
   if (!list1) curr.next = list2;
   if (!list2) curr.next = list1;
   return dummy.next;
 }
 console.log(mergeTwoLists(list1, list2));
+
+// space complexity O(1) constant
+// time complexity O(n+m) where n, m represents the length of linked list 1-2
