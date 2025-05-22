@@ -48,6 +48,9 @@ class LinkedList {
   }
 
   push(value) {
+    // create a new node
+    // if the list is empty, set the head and tail to the new node
+    // if the list is not empty, set the next of the tail to the new node
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
@@ -60,10 +63,35 @@ class LinkedList {
     return this;
   }
 
-  pop(value) {
-    if (!this.head) {
-      return undefined;
+  // removes last item in the list
+  // returns the removed item
+  pop() {
+    if (!this.head) return undefined;
+
+    // two pointers
+    // one to traverse the list - temp
+    // one to keep track of the previous node - pre
+    let temp = this.head;
+    let pre = this.head;
+
+    while (temp.next) {
+      pre = temp;
+      temp = temp.next;
     }
+
+    // set the tail to the previous node
+    // so we can remove the last node
+    this.tail = pre;
+    // to remove the last node, set the next of the previous node to null
+    this.tail.next = null;
+    // decrement the length of the list
+    this.length--;
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return temp;
   }
 }
 
