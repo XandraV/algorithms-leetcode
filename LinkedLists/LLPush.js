@@ -47,6 +47,7 @@ class LinkedList {
     this.length = 0;
   }
 
+  // O(1) time complexity because we are not traversing the linked list
   push(value) {
     const newNode = new Node(value);
     if (!this.head) {

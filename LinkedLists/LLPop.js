@@ -63,8 +63,10 @@ class LinkedList {
     return this;
   }
 
-  // removes last item in the list
-  // returns the removed item
+  // complexity is O(n)
+  // pop() removes the last node from the linked list
+  // it takes O(n) time because we are traversing the linked list
+  // to get the last node
   pop() {
     if (!this.head) return undefined;
 
