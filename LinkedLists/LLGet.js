@@ -91,63 +91,41 @@ class LinkedList {
     return this;
   }
 
-  // O(1) time complexity because we are only changing the head pointer
   shift() {
-    const temp = this.head;
-
-    // this is the same as setting this.tail to null
-    // after we decrement on line 115 when length is 0
-    // if (this.length === 1) {
-    //   this.tail = null;
-    //   this.head = null;
-    //   this.length = 0;
-    //   return temp;
-    // }
-
-    if (!this.head) {
-      // if the list is empty
-      return undefined;
-    } else {
-      // move the head to the next node
-      this.head = this.head.next;
-      // set the next of the removed node to null
-      // to unlink it from the list
-      temp.next = null;
-      this.length--;
-
-      if (this.length === 0) {
-        this.tail = null;
-      }
-      // return the removed node
-      return temp;
+    if (this.length === 0) return undefined;
+    let temp = this.head;
+    this.head = this.head.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
     }
+    temp.next = null;
+    return temp;
+  }
+
+  // O(index) time complexity because we have to traverse the list to find the node at the given index
+  get(index) {
+    // Check if the index is out of bounds
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    }
+
+    // Traverse the list to find the node at the given index
+    let temp = this.head;
+    for (let i = 0; i < index; i++) {
+      temp = temp.next;
+    }
+    return temp;
   }
 }
 
 function test() {
-  let myLinkedList = new LinkedList(2);
+  let myLinkedList = new LinkedList(0);
   myLinkedList.push(1);
+  myLinkedList.push(2);
+  myLinkedList.push(3);
 
-  // (2) Items in LL - Returns 2 Node
-  if (myLinkedList.length !== 0) {
-    console.log(myLinkedList.shift().value);
-  } else {
-    console.log("null");
-  }
-
-  // (1) Item in LL - Returns 1 Node
-  if (myLinkedList.length !== 0) {
-    console.log(myLinkedList.shift().value);
-  } else {
-    console.log("null");
-  }
-
-  // (0) Items in LL - Returns null
-  if (myLinkedList.length !== 0) {
-    console.log(myLinkedList.shift().value);
-  } else {
-    console.log("null");
-  }
+  console.log(myLinkedList.get(3).value);
 }
 
 test();
@@ -155,8 +133,6 @@ test();
 /*
     EXPECTED OUTPUT:
     ----------------
-    2
-    1
-    null
+    3
 
 */
