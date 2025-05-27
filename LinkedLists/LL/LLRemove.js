@@ -121,6 +121,7 @@ class LinkedList {
     return false;
   }
 
+  // O(n) time complexity because we need to traverse the list to find the index
   insert(index, value) {
     if (index < 0 || index > this.length) return false;
     if (index === this.length) return this.push(value);
