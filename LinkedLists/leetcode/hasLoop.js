@@ -9,7 +9,8 @@ class LinkedList {
   constructor(value) {
     const newNode = new Node(value);
     this.head = newNode;
-    this.tail = this.head;
+    this.tail = newNode;
+    this.length = 1;
   }
 
   printList() {
@@ -36,6 +37,10 @@ class LinkedList {
     }
   }
 
+  getLength() {
+    console.log("Length: " + this.length);
+  }
+
   makeEmpty() {
     this.head = null;
     this.tail = null;
@@ -51,21 +56,21 @@ class LinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.length++;
   }
 
-  findMiddleNode() {
-    if (!this.head) {
-      return null;
-    }
+  hasLoop() {
     let slow = this.head;
     let fast = this.head;
 
     while (fast !== null && fast.next !== null) {
       slow = slow.next;
       fast = fast.next.next;
+      if (slow === fast) {
+        return true; // Loop detected
+      }
     }
-
-    return slow;
+    return false;
   }
 }
 
@@ -78,22 +83,14 @@ myLinkedList.push(5);
 console.log("Original list:");
 myLinkedList.printList();
 
-const middleNode = myLinkedList.findMiddleNode();
-console.log(`\nMiddle node value: ${middleNode.value}`);
+const hasLoopResult = myLinkedList.hasLoop();
+console.log(`\nHas loop? ${hasLoopResult}`);
 
-// Create a new list with an even number of elements
-let myLinkedList2 = new LinkedList(1);
-myLinkedList2.push(2);
-myLinkedList2.push(3);
-myLinkedList2.push(4);
-myLinkedList2.push(5);
-myLinkedList2.push(6);
+// Create a loop for testing purposes
+myLinkedList.tail.next = myLinkedList.head.next; // Create a loop by linking tail to the second node
 
-console.log("\nOriginal list 2:");
-myLinkedList2.printList();
-
-const middleNode2 = myLinkedList2.findMiddleNode();
-console.log(`\nMiddle node value of list 2: ${middleNode2.value}`);
+const hasLoopResultAfterLoop = myLinkedList.hasLoop();
+console.log(`\nHas loop after creating a loop? ${hasLoopResultAfterLoop}`);
 
 /*
     EXPECTED OUTPUT:
@@ -104,13 +101,6 @@ console.log(`\nMiddle node value of list 2: ${middleNode2.value}`);
     3
     4
     5
-    Middle node value: 3
-    Original list 2:
-    1
-    2
-    3
-    4
-    5
-    6
-    Middle node value of list 2: 4
+    Has loop? false
+    Has loop after creating a loop? true
 */
