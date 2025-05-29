@@ -64,9 +64,10 @@ class LinkedList {
     let fast = this.head;
 
     while (fast !== null && fast.next !== null) {
-      slow = slow.next;
-      fast = fast.next.next;
+      slow = slow.next; // move by 1
+      fast = fast.next.next; // move head by 2
       if (slow === fast) {
+        // if they point to the same node
         return true; // Loop detected
       }
     }

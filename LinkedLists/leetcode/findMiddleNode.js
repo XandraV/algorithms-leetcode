@@ -60,11 +60,16 @@ class LinkedList {
     let slow = this.head;
     let fast = this.head;
 
+    // exit the loop one fast is outside the list (ie fast is null)
+    // or there is no next element ie fast.next is null
     while (fast !== null && fast.next !== null) {
-      slow = slow.next;
-      fast = fast.next.next;
+      slow = slow.next; // move by 1
+      fast = fast.next.next; //move by 2
     }
 
+    // when fast is null, return slow as it points to the last element
+    // when fast.next is null,
+    //then slow already equals to slow.next which is same as fast
     return slow;
   }
 }
