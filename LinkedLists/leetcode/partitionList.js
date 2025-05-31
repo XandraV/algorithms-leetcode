@@ -60,26 +60,23 @@ class LinkedList {
     this.length++;
   }
 
-  //   +===================================================+
-  //   |                  WRITE YOUR CODE HERE             |
-  //   | Description:                                      |
-  //   | - This method partitions a linked list around a   |
-  //   |   value `x`.                                      |
-  //   | - It rearranges the nodes in such a way that all  |
-  //   |   nodes less than `x` come before all nodes       |
-  //   |   greater than or equal to `x`.                   |
-  //   |                                                   |
-  //   | Tips:                                             |
-  //   | - We use two dummy nodes, `dummy1` and `dummy2`,  |
-  //   |   to build two separate lists: one for elements   |
-  //   |   smaller than `x` and one for elements greater   |
-  //   |   or equal to `x`.                                |
-  //   | - We then merge these two lists.                  |
-  //   | - `prev1` and `prev2` are pointers to the last    |
-  //   |   nodes of these lists.                           |
-  //   | - The head of the resulting list is set as        |
-  //   |   `dummy1.next`.                                  |
-  //   +===================================================+
+
+  //  - This method partitions a linked list around a   
+  //    value `x`.                                      
+  //  - It rearranges the nodes in such a way that all  
+  //    nodes less than `x` come before all nodes       
+  //    greater than or equal to `x`.                   
+  
+  
+  //  - We use two dummy nodes, `dummy1` and `dummy2`,  
+  //    to build two separate lists: one for elements   
+  //    smaller than `x` and one for elements greater   
+  //    or equal to `x`.                                
+  //  - We then merge these two lists.                  
+  //  - `prev1` and `prev2` are pointers to the last    
+  //    nodes of these lists.                           
+  //  - The head of the resulting list is set as        
+  //    `dummy1.next`.                                  
 
   partitionList(x) {
     // If the list is empty, do nothing
