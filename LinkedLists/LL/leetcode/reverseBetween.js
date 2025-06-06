@@ -126,7 +126,7 @@ class LinkedList {
     // The loop for the actual reversal of the segment between m and n.
     // It runs (n - m) times, moving each node in turn to the position after 'prev'.
     for (let i = 0; i < n - m; i++) {
-      // 'temp' temporarily stores the next node after current to be move after prev
+      // 'temp' temporarily stores the next node after current to be moved after prev
       const temp = current.next;
 
       // Bypass/remove 'temp' in the current positioning.

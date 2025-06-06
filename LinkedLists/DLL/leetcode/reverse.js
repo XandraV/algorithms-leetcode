@@ -72,7 +72,7 @@ class DoublyLinkedList {
 
     // Loop through all the nodes, starting from head till no next item
     while (current !== null) {
-      // store th eoriginal prev, current.prev
+      // store the original prev, current.prev
       // before it can be overwritten
       temp = current.prev;
       // goal is to swap the links prev and next of current
