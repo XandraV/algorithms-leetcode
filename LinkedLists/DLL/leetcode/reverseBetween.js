@@ -82,8 +82,8 @@ class DoublyLinkedList {
     // set prev to the dummy node before head
     let prev = dummy;
 
-    // Iterate to position just before where reversal begins.
-    // Since indices are 0-based, this loop moves 'prev' 'm' nodes forward.
+    // Iterate to position just before where reversal begins
+    // Since indices are 0-based, this loop moves 'prev' 'm' nodes forward
     // prev will eventually point to the node just before the start of the reversal.
 
     for (let i = 0; i < startIndex; i++) {
