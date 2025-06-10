@@ -109,7 +109,9 @@ class DoublyLinkedList {
     // and dummy2's next points to the first element of the second sublist
     // we connect them by setting prev1's next to dummy2's next
     prev1.next = dummy2.next;
-    // set dummy2's next's prev to prev1
+    // the prev of the first element of the sublist ie 
+    // and dummy2's next's prev 
+    // we set it to prev1, the last element of the 1st sublist
     if (dummy2.next) {
       dummy2.next.prev = prev1;
     }

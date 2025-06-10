@@ -67,7 +67,7 @@ class DoublyLinkedList {
     let current = this.head;
     // temp is a temporary variable used to store the link to the node before current
     // ie current.prev in order for swapping
-    // this is needed to we can change current.prev to swap links
+    // this is needed so we can change current.prev to swap links
     let temp = null;
 
     // Loop through all the nodes, starting from head till no next item
