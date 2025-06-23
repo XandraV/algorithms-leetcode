@@ -19,18 +19,27 @@ class BST {
     }
     let temp = this.root;
     while (true) {
+      // If the value already exists, return undefined
+      // to indicate that duplicates are not allowed
       if (newNode.value === temp.value) return undefined;
+
+      // If the new value is less than the current node's value,
+      // move to the left child; otherwise, move to the right child
       if (newNode.value < temp.value) {
+        // If the left child is null, insert the new node here
         if (temp.left === null) {
           temp.left = newNode;
           return this;
         }
+        // Otherwise, move to the left child
         temp = temp.left;
       } else {
+        // If the right child is null, insert the new node here
         if (temp.right === null) {
           temp.right = newNode;
           return this;
         }
+        // Otherwise, move to the right child
         temp = temp.right;
       }
     }
