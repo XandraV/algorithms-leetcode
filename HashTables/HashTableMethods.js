@@ -33,14 +33,14 @@ class HashTable {
   }
 
   // Adds a key-value pair to the hash table
-  // If the key already exists, it pushes the new value to the existing key's array
-  // This allows for multiple values to be stored under the same key
-  // Returns the hash table instance for method chaining
   set(key, value) {
     let index = this._hash(key);
-    if (!this.dataMap[index]) this.dataMap[index] = [];
 
+    if (!this.dataMap[index]) this.dataMap[index] = [];
+    // If the key already exists, it pushes the new value to the existing key's array
+    // This allows for multiple values to be stored under the same key
     this.dataMap[index].push([key, value]);
+    // Returns the hash table instance for method chaining
     return this;
   }
 
@@ -61,11 +61,16 @@ class HashTable {
     return undefined;
   }
 
+  // returns an array of all keys in the hash table
   keys() {
     let allKeys = [];
+    // loop through the dataMap
     for (let i = 0; i < this.dataMap.length; i++) {
+      // check if there is anything at that index
       if (this.dataMap[i]) {
+        // if there is, loop through the array
         for (let j = 0; j < this.dataMap[i].length; j++) {
+          // push the first element of the sub-array (the key) to allKeys
           allKeys.push(this.dataMap[i][j][0]);
         }
       }
