@@ -18,6 +18,7 @@ class HashTable {
   }
 
   // Generates a hash for the given key
+  // total time = O(length of key) = O(k).
   _hash(key) {
     let hash = 0;
     for (let i = 0; i < key.length; i++) {
@@ -33,6 +34,7 @@ class HashTable {
   }
 
   // Adds a key-value pair to the hash table
+  // O(1) complexity
   set(key, value) {
     let index = this._hash(key);
 
@@ -44,6 +46,9 @@ class HashTable {
     return this;
   }
 
+  // O(1) complexity as the number of items per bucket(ie inside this.dataMap[index]) is small
+  // usually 1, 2 or a few
+  // So the loop runs only a few times → still constant time, i.e., O(1).
   get(key) {
     // retrieves the index for the key we want to get the value for
     let index = this._hash(key);
@@ -61,15 +66,19 @@ class HashTable {
     return undefined;
   }
 
-  // returns an array of all keys in the hash table
+  // Returns an array of all keys in the hash table
+  // O(n + m) complexity where m is the number of buckets and n is the number of key-value pairs/entrie in that bucket
+  // The inner loop only runs for entries actually in that bucket and not m times for every n,
   keys() {
     let allKeys = [];
     // loop through the dataMap
     for (let i = 0; i < this.dataMap.length; i++) {
+      // run m times for every bucket
       // check if there is anything at that index
       if (this.dataMap[i]) {
         // if there is, loop through the array
         for (let j = 0; j < this.dataMap[i].length; j++) {
+          // run n times = every entry in that bucket, sum of all j = n
           // push the first element of the sub-array (the key) to allKeys
           allKeys.push(this.dataMap[i][j][0]);
         }
