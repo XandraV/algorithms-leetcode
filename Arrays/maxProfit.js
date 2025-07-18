@@ -32,9 +32,7 @@ function maxProfit2(prices) {
   return maxProfit;
 }
 
-// ------------------------------------
-//  Test array with increasing prices
-// ------------------------------------
+
 console.log("Increasing prices:");
 let increasingPrices = [1, 2, 3, 4, 5];
 console.log("Array:", increasingPrices);
@@ -42,9 +40,7 @@ console.log("Expected Max Profit: 4");
 console.log("Actual Max Profit:", maxProfit(increasingPrices));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with decreasing prices
-// ------------------------------------
+
 console.log("Decreasing prices:");
 let decreasingPrices = [5, 4, 3, 2, 1];
 console.log("Array:", decreasingPrices);
@@ -52,9 +48,6 @@ console.log("Expected Max Profit: 0");
 console.log("Actual Max Profit:", maxProfit(decreasingPrices));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with random prices
-// ------------------------------------
 console.log("Random prices:");
 let randomPrices = [3, 1, 4, 1, 5, 9, 2, 6, 5];
 console.log("Array:", randomPrices);
