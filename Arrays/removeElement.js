@@ -15,9 +15,6 @@ function removeElement(nums, val) {
   return i;
 }
 
-// ------------------------------------
-//  Test empty array
-// ------------------------------------
 let arrEmpty = [];
 console.log("Test empty array:");
 console.log("Before:", arrEmpty); // Should print: []
