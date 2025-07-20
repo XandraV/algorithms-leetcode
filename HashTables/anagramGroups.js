@@ -12,9 +12,7 @@ function groupAnagrams(arr) {
   return Array.from(anagramGroups.values());
 }
 
-// ---------------
-// Lowercase Anagrams
-// ---------------
+
 console.log("Lowercase Anagrams:");
 console.log("Input: ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']");
 console.log(
@@ -23,9 +21,6 @@ console.log(
 );
 console.log("---------------");
 
-// ---------------
-// Mixed Case Anagrams
-// ---------------
 console.log("Mixed Case Anagrams:");
 console.log("Input: ['Eat', 'Tea', 'Tan', 'Ate', 'Nat', 'Bat']");
 console.log(
@@ -34,9 +29,6 @@ console.log(
 );
 console.log("---------------");
 
-// ---------------
-// No Anagrams
-// ---------------
 console.log("No Anagrams:");
 console.log("Input: ['hello', 'world', 'test']");
 console.log(
