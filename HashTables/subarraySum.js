@@ -16,9 +16,7 @@ function subarraySum(nums, target) {
   return [];
 }
 
-// ---------------
-// Positive Numbers
-// ---------------
+
 console.log("Positive Numbers:");
 console.log("Input: [2, 4, 6, 3], Target: 10");
 console.log("Output: ", JSON.stringify(subarraySum([2, 4, 6, 3], 10)));
