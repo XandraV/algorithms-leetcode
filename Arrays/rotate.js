@@ -73,9 +73,7 @@ console.log("Expected After:  4, 3, 2, 1");
 console.log("Actual After:   ", rotateZero.join(", "));
 console.log("---------------");
 
-// ------------------------------------
-//  Test empty array rotation
-// ------------------------------------
+
 console.log("Empty array:");
 let rotateEmpty = [];
 console.log("Before:         ", rotateEmpty.join(", "));
@@ -84,9 +82,7 @@ console.log("Expected After:  ");
 console.log("Actual After:   ", rotateEmpty.join(", "));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array rotation with negative k
-// ------------------------------------
+
 console.log("Negative k value:");
 let rotateNeg = [5, 6, 7, 8];
 console.log("Before:         ", rotateNeg.join(", "));
@@ -95,9 +91,7 @@ console.log("Expected After:  5, 6, 7, 8");
 console.log("Actual After:   ", rotateNeg.join(", "));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with all same elements
-// ------------------------------------
+
 console.log("All same elements:");
 let rotateSame = [2, 2, 2, 2];
 console.log("Before:         ", rotateSame.join(", "));
@@ -106,9 +100,7 @@ console.log("Expected After:  2, 2, 2, 2");
 console.log("Actual After:   ", rotateSame.join(", "));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array rotation with k larger than array size
-// ------------------------------------
+
 console.log("k larger than array size:");
 let rotateLargeK = [1, 2];
 console.log("Before:         ", rotateLargeK.join(", "));
