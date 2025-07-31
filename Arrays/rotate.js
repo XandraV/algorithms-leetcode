@@ -40,9 +40,6 @@ function rotate(nums, k) {
   }
 }
 
-// ------------------------------------
-//  Test array rotation by 1
-// ------------------------------------
 console.log("Rotate by 1:");
 let rotate1 = [1, 2, 3, 4, 5];
 console.log("Before:         ", rotate1.join(", "));
