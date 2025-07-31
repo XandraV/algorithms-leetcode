@@ -51,9 +51,7 @@ console.log("Expected After:  5, 1, 2, 3, 4");
 console.log("Actual After:   ", rotate1.join(", "));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array rotation by array length
-// ------------------------------------
+
 console.log("Rotate by array length:");
 let rotateLen = [1, 2, 3];
 console.log("Before:         ", rotateLen.join(", "));
@@ -62,9 +60,6 @@ console.log("Expected After:  1, 2, 3");
 console.log("Actual After:   ", rotateLen.join(", "));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array rotation by 0
-// ------------------------------------
 console.log("Rotate by 0:");
 let rotateZero = [4, 3, 2, 1];
 console.log("Before:         ", rotateZero.join(", "));
