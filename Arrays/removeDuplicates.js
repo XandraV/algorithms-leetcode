@@ -64,9 +64,6 @@ console.log("After:", allSame.slice(0, lenAllSame));
 console.log("Length:", lenAllSame);
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with negative numbers
-// ------------------------------------
 let negNumbers = [-1, -1, 0, 2, 2];
 console.log("Test array with negative numbers:");
 console.log("Before:", negNumbers);
