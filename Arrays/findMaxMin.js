@@ -49,19 +49,16 @@ console.log("---------------");
 // ------------------------------------
 let arrSame = [2, 2, 2, 2];
 console.log("Test array with all same numbers:");
-console.log("Array:", arrSame); // Should print: [2, 2, 2, 2]
+console.log("Array:", arrSame); 
 let resultSame = findMaxMin(arrSame);
-console.log("Max and Min:", resultSame); // Should print: [2, 2]
+console.log("Max and Min:", resultSame); 
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with one number
-// ------------------------------------
 let arrOne = [7];
 console.log("Test array with one number:");
-console.log("Array:", arrOne); // Should print: [7]
+console.log("Array:", arrOne);
 let resultOne = findMaxMin(arrOne);
-console.log("Max and Min:", resultOne); // Should print: [7, 7]
+console.log("Max and Min:", resultOne);
 console.log("---------------");
 
 // ------------------------------------
@@ -69,9 +66,9 @@ console.log("---------------");
 // ------------------------------------
 let arrDec = [1.5, 2.5, 0.5];
 console.log("Test array with decimals:");
-console.log("Array:", arrDec); // Should print: [1.5, 2.5, 0.5]
+console.log("Array:", arrDec); 
 let resultDec = findMaxMin(arrDec);
-console.log("Max and Min:", resultDec); // Should print: [2.5, 0.5]
+console.log("Max and Min:", resultDec); 
 console.log("---------------");
 
 // ------------------------------------
@@ -79,7 +76,7 @@ console.log("---------------");
 // ------------------------------------
 let arrZero = [0, 0, 0];
 console.log("Test array with zeros:");
-console.log("Array:", arrZero); // Should print: [0, 0, 0]
+console.log("Array:", arrZero); 
 let resultZero = findMaxMin(arrZero);
-console.log("Max and Min:", resultZero); // Should print: [0, 0]
+console.log("Max and Min:", resultZero);
 console.log("---------------");

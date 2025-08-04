@@ -20,9 +20,7 @@ function removeDuplicates2(nums) {
   return writePointer;
 }
 
-// ------------------------------------
-//  Test array with no duplicates
-// ------------------------------------
+
 let noDups = [1, 2, 3, 4];
 console.log("Test array with no duplicates:");
 console.log("Before:", noDups);
@@ -31,9 +29,7 @@ console.log("After:", noDups.slice(0, lenNoDups));
 console.log("Length:", lenNoDups);
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with duplicates
-// ------------------------------------
+
 let withDups = [1, 1, 2, 2, 3];
 console.log("Test array with duplicates:");
 console.log("Before:", withDups);
@@ -42,9 +38,7 @@ console.log("After:", withDups.slice(0, lenWithDups));
 console.log("Length:", lenWithDups);
 console.log("---------------");
 
-// ------------------------------------
-//  Test empty array
-// ------------------------------------
+
 let emptyArr = [];
 console.log("Test empty array:");
 console.log("Before:", emptyArr);
@@ -53,9 +47,7 @@ console.log("After:", emptyArr.slice(0, lenEmpty));
 console.log("Length:", lenEmpty);
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with all same numbers
-// ------------------------------------
+
 let allSame = [3, 3, 3];
 console.log("Test array with all same numbers:");
 console.log("Before:", allSame);
