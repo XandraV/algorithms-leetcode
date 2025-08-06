@@ -71,9 +71,7 @@ let resultDec = findMaxMin(arrDec);
 console.log("Max and Min:", resultDec); 
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with zeros
-// ------------------------------------
+
 let arrZero = [0, 0, 0];
 console.log("Test array with zeros:");
 console.log("Array:", arrZero); 
