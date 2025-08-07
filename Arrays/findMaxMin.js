@@ -61,9 +61,6 @@ let resultOne = findMaxMin(arrOne);
 console.log("Max and Min:", resultOne);
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with decimals
-// ------------------------------------
 let arrDec = [1.5, 2.5, 0.5];
 console.log("Test array with decimals:");
 console.log("Array:", arrDec); 
