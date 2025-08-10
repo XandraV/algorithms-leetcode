@@ -34,14 +34,11 @@ let resultNeg = findMaxMin(arrNeg);
 console.log("Max and Min:", resultNeg); // Should print: [-1, -4]
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with both positive and negative numbers
-// ------------------------------------
 let arrMixed = [-1, 0, 1];
 console.log("Test array with both positive and negative numbers:");
-console.log("Array:", arrMixed); // Should print: [-1, 0, 1]
+console.log("Array:", arrMixed); 
 let resultMixed = findMaxMin(arrMixed);
-console.log("Max and Min:", resultMixed); // Should print: [1, -1]
+console.log("Max and Min:", resultMixed); 
 console.log("---------------");
 
 let arrSame = [2, 2, 2, 2];
