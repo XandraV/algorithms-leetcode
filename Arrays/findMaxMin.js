@@ -44,9 +44,6 @@ let resultMixed = findMaxMin(arrMixed);
 console.log("Max and Min:", resultMixed); // Should print: [1, -1]
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with all same numbers
-// ------------------------------------
 let arrSame = [2, 2, 2, 2];
 console.log("Test array with all same numbers:");
 console.log("Array:", arrSame); 
