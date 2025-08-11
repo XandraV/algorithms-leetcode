@@ -29,9 +29,9 @@ console.log("---------------");
 // ------------------------------------
 let arrNeg = [-1, -2, -3, -4];
 console.log("Test array with negative numbers:");
-console.log("Array:", arrNeg); // Should print: [-1, -2, -3, -4]
+console.log("Array:", arrNeg);
 let resultNeg = findMaxMin(arrNeg);
-console.log("Max and Min:", resultNeg); // Should print: [-1, -4]
+console.log("Max and Min:", resultNeg); 
 console.log("---------------");
 
 let arrMixed = [-1, 0, 1];
