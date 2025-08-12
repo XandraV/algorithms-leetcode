@@ -64,9 +64,6 @@ console.log("After:", negNumbers.slice(0, lenNeg));
 console.log("Length:", lenNeg);
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with one element
-// ------------------------------------
 let singleElem = [1];
 console.log("Test array with one element:");
 console.log("Before:", singleElem);
