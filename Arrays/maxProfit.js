@@ -55,9 +55,6 @@ console.log("Expected Max Profit: 8");
 console.log("Actual Max Profit:", maxProfit(randomPrices));
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with same prices
-// ------------------------------------
 console.log("Same prices:");
 let samePrices = [2, 2, 2, 2, 2];
 console.log("Array:", samePrices);
