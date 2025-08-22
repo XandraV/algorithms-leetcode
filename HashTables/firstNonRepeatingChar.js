@@ -43,9 +43,6 @@ console.log("Input: 'a'");
 console.log("Output: ", JSON.stringify(firstNonRepeatingChar('a')));
 console.log("---------------");
 
-// ---------------
-// Multiple Non-Repeating Chars
-// ---------------
 console.log("Multiple Non-Repeating Chars:");
 console.log("Input: 'abcdaef'");
 console.log("Output: ", JSON.stringify(firstNonRepeatingChar('abcdaef')));
