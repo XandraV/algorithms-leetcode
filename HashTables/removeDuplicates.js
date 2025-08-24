@@ -39,4 +39,3 @@ console.log("---------------");
 console.log("Single Element:");
 console.log("Input: [1]");
 console.log("Output: ", removeDuplicates([1]));
-console.log("---------------");
