@@ -62,9 +62,7 @@ console.log("Expected Max Profit: 0");
 console.log("Actual Max Profit:", maxProfit(samePrices));
 console.log("---------------");
 
-// ------------------------------------
-//  Test empty array
-// ------------------------------------
+
 console.log("Empty array:");
 let emptyPrices = [];
 console.log("Array:", emptyPrices);
