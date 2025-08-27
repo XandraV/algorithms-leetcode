@@ -68,11 +68,8 @@ let emptyPrices = [];
 console.log("Array:", emptyPrices);
 console.log("Expected Max Profit: 0");
 console.log("Actual Max Profit:", maxProfit(emptyPrices));
-console.log("---------------");
 
-// ------------------------------------
-//  Test array with negative prices
-// ------------------------------------
+
 console.log("Negative prices:");
 let negativePrices = [-1, -2, -3, -4];
 console.log("Array:", negativePrices);
