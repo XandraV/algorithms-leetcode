@@ -28,7 +28,6 @@ function maxProfit2(prices) {
     let profit = price - minPrice;
     maxProfit = Math.max(maxProfit, profit);
   }
-
   return maxProfit;
 }
 
