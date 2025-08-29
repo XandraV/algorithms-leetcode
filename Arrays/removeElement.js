@@ -28,10 +28,10 @@ console.log("---------------");
 // ------------------------------------
 let arrNoElem = [1, 2, 3, 4];
 console.log("Test array without the element to remove:");
-console.log("Before:", arrNoElem); // Should print: [1, 2, 3, 4]
+console.log("Before:", arrNoElem); 
 let lenNoElem = removeElement(arrNoElem, 5);
-console.log("After:", arrNoElem.slice(0, lenNoElem)); // Should print: [1, 2, 3, 4]
-console.log("Length:", lenNoElem); // Should print: 4
+console.log("After:", arrNoElem.slice(0, lenNoElem)); 
+console.log("Length:", lenNoElem); 
 console.log("---------------");
 
 
