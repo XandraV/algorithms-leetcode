@@ -23,9 +23,7 @@ console.log("After:", arrEmpty.slice(0, lenEmpty)); // Should print: []
 console.log("Length:", lenEmpty); // Should print: 0
 console.log("---------------");
 
-// ------------------------------------
-//  Test array without the element to remove
-// ------------------------------------
+
 let arrNoElem = [1, 2, 3, 4];
 console.log("Test array without the element to remove:");
 console.log("Before:", arrNoElem); 
@@ -37,10 +35,10 @@ console.log("---------------");
 
 let arrOneType = [3, 3, 3, 3];
 console.log("Test array with one type of element to remove:");
-console.log("Before:", arrOneType); // Should print: [3, 3, 3, 3]
+console.log("Before:", arrOneType); 
 let lenOneType = removeElement(arrOneType, 3);
-console.log("After:", arrOneType.slice(0, lenOneType)); // Should print: []
-console.log("Length:", lenOneType); // Should print: 0
+console.log("After:", arrOneType.slice(0, lenOneType));
+console.log("Length:", lenOneType); 
 console.log("---------------");
 
 // ------------------------------------
