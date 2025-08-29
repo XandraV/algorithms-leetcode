@@ -34,9 +34,7 @@ console.log("After:", arrNoElem.slice(0, lenNoElem)); // Should print: [1, 2, 3,
 console.log("Length:", lenNoElem); // Should print: 4
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with one type of element to remove
-// ------------------------------------
+
 let arrOneType = [3, 3, 3, 3];
 console.log("Test array with one type of element to remove:");
 console.log("Before:", arrOneType); // Should print: [3, 3, 3, 3]
