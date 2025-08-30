@@ -91,9 +91,7 @@ console.log("Expected Max Subarray Sum: 1");
 console.log("Actual Max Subarray Sum:", maxSumPosNeg);
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with both negative and positive numbers
-// ------------------------------------
+
 console.log("Mixed numbers:");
 let mixedNums2 = [-2, 1, -3, 4, -1, 2, 1, -5, 10, 10, 10, 10, 10];
 console.log("Array:", mixedNums2);
@@ -102,9 +100,7 @@ console.log("Expected Max Subarray Sum: 51");
 console.log("Actual Max Subarray Sum:", maxSumMixed2);
 console.log("---------------");
 
-// ------------------------------------
-//  Test array with both negative and positive numbers
-// ------------------------------------
+
 console.log("Mixed numbers:");
 let mixedNums3 = [
   -2, 1, -3, 4, -1, 2, 1, -5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 10, 10, 10,
