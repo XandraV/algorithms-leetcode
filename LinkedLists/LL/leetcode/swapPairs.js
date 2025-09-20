@@ -1,106 +1,100 @@
 class Node {
-    constructor(value){
-        this.value = value;
-        this.next = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
- 
+
 class LinkedList {
-    constructor(value) {
-        const newNode = new Node(value);
-        this.head = newNode;
-        this.length = 1;
+  constructor(value) {
+    const newNode = new Node(value);
+    this.head = newNode;
+    this.length = 1;
+  }
+
+  printList() {
+    let temp = this.head;
+    let output = "";
+    if (temp === null) {
+      console.log("empty");
+      return;
+    }
+    while (temp !== null) {
+      output += String(temp.value);
+      temp = temp.next;
+      if (temp !== null) {
+        output += " -> ";
+      }
+    }
+    console.log(output);
+  }
+
+  getHead() {
+    if (this.head === null) {
+      console.log("Head: null");
+    } else {
+      console.log("Head: " + this.head.value);
+    }
+  }
+
+  getLength() {
+    console.log("Length: " + this.length);
+  }
+
+  makeEmpty() {
+    this.head = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    const newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next !== null) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+    this.length++;
+  }
+
+  swapPairs() {
+    // Create a dummy node pointing to head
+    // This helps simplify edge cases like swapping the head
+    const dummy = new Node(0);
+    dummy.next = this.head;
+
+    // Set pointers to start of list
+    let previous = dummy;
+    let first = this.head;
+
+    // Loop while there are at least two nodes to swap
+    while (first !== null && first.next !== null) {
+      // Store the second node
+      const second = first.next;
+
+      // Point previous to second, beginning the swap
+      previous.next = second;
+
+      // Link first to node after second
+      first.next = second.next;
+
+      // Complete the swap: second now points to first
+      second.next = first;
+
+      // Move previous forward to first
+      previous = first;
+
+      // Move first forward to the next pair
+      first = first.next;
     }
 
-    printList() {
-        let temp = this.head;
-        let output = "";
-        if (temp === null) {
-            console.log("empty");
-            return;
-        }
-        while (temp !== null) {
-            output += String(temp.value);
-            temp = temp.next;
-            if (temp !== null) {
-                output += " -> ";
-            }
-        }
-        console.log(output);
-    }
-
-    getHead() {
-        if (this.head === null) {
-            console.log("Head: null");
-        } else {
-            console.log("Head: " + this.head.value);
-        }
-    }
-
-    getLength() {
-        console.log("Length: " + this.length);
-    }
-
-    makeEmpty() {
-        this.head = null;
-        this.length = 0;
-    }
- 
-	push(value) {
-		const newNode = new Node(value);
-		if (!this.head) {
-			this.head = newNode;
-		} else {
-			let current = this.head;
-			while (current.next !== null) {
-				current = current.next;
-			}
-			current.next = newNode;
-		}
-		this.length++;
-	}
-	
-         swapPairs() {
-        // Create a dummy node pointing to head
-        // This helps simplify edge cases like swapping the head
-        const dummy = new Node(0);
-        dummy.next = this.head;
-    
-        // Set pointers to start of list
-        let previous = dummy;
-        let first = this.head;
-    
-        // Loop while there are at least two nodes to swap
-        while (first !== null && first.next !== null) {
-            // Store the second node
-            const second = first.next;
-    
-            // Point previous to second, beginning the swap
-            previous.next = second;
-    
-            // Link first to node after second
-            first.next = second.next;
-    
-            // Complete the swap: second now points to first
-            second.next = first;
-    
-            // Move previous forward to first
-            previous = first;
-    
-            // Move first forward to the next pair
-            first = first.next;
-        }
-    
-        // Update head in case it changed
-        this.head = dummy.next;
-    } 
-
+    // Update head in case it changed
+    this.head = dummy.next;
+  }
 }
-
-
-
-
-
 
 // Test cases:
 console.log("\nTest Case 1: Even number of nodes");
@@ -142,4 +136,3 @@ ll4.printList();
 ll4.swapPairs();
 console.log("AFTER:");
 ll4.printList();
-
