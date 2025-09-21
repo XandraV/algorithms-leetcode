@@ -7,6 +7,8 @@ function maxSubarray(nums) {
   let maxSum = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
+    // when we take num[i] instead of currentSum + nums[i]
+    // is when we restart the subArray (and the sum)
     currentSum = Math.max(nums[i], currentSum + nums[i]);
 
     maxSum = Math.max(currentSum, maxSum);
@@ -14,6 +16,32 @@ function maxSubarray(nums) {
   return maxSum;
 }
 
+function maxSubarray2(nums) {
+  if (nums.length === 0) {
+    return 0;
+  }
+
+  let currentSum = nums[0];
+  let maxSum = nums[0];
+
+  let leftPointer = 1;
+  let rightPointer = 1;
+
+  for (let i = 1; i < nums.length; i++) {
+    // when we take num[i] instead of currentSum + nums[i]
+    // is when we restart the subArray (and the sum)
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
+    if (currentSum === nums[i]) {
+      leftPointer = i;
+      rightPointer = i;
+    }
+    rightPointer++;
+    maxSum = Math.max(currentSum, maxSum);
+  }
+
+  res = nums.slice(leftPointer, rightPointer + 1);
+  return { maxSum, res };
+}
 // ------------------------------------
 //  Test array with both negative and positive numbers
 // ------------------------------------
@@ -91,7 +119,6 @@ console.log("Expected Max Subarray Sum: 1");
 console.log("Actual Max Subarray Sum:", maxSumPosNeg);
 console.log("---------------");
 
-
 console.log("Mixed numbers:");
 let mixedNums2 = [-2, 1, -3, 4, -1, 2, 1, -5, 10, 10, 10, 10, 10];
 console.log("Array:", mixedNums2);
@@ -99,7 +126,6 @@ let maxSumMixed2 = maxSubarray(mixedNums2);
 console.log("Expected Max Subarray Sum: 51");
 console.log("Actual Max Subarray Sum:", maxSumMixed2);
 console.log("---------------");
-
 
 console.log("Mixed numbers:");
 let mixedNums3 = [
