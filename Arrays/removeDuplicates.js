@@ -10,16 +10,18 @@ function removeDuplicates2(nums) {
 
   let writePointer = 1;
 
+  // readPointer is index of num in nums array
+  // writePointer is index of the nums in the no-duplicates array ie it'll move
+  // behind readPointer at some point
   for (let readPointer = 1; readPointer < nums.length; readPointer++) {
     if (nums[readPointer] !== nums[readPointer - 1]) {
       nums[writePointer] = nums[readPointer];
       writePointer++;
     }
   }
-
+  // to remove duplicates remove everything after writePointer nums.slice(0,writePointer)
   return writePointer;
 }
-
 
 let noDups = [1, 2, 3, 4];
 console.log("Test array with no duplicates:");
@@ -29,7 +31,6 @@ console.log("After:", noDups.slice(0, lenNoDups));
 console.log("Length:", lenNoDups);
 console.log("---------------");
 
-
 let withDups = [1, 1, 2, 2, 3];
 console.log("Test array with duplicates:");
 console.log("Before:", withDups);
@@ -38,7 +39,6 @@ console.log("After:", withDups.slice(0, lenWithDups));
 console.log("Length:", lenWithDups);
 console.log("---------------");
 
-
 let emptyArr = [];
 console.log("Test empty array:");
 console.log("Before:", emptyArr);
@@ -46,7 +46,6 @@ let lenEmpty = removeDuplicates(emptyArr);
 console.log("After:", emptyArr.slice(0, lenEmpty));
 console.log("Length:", lenEmpty);
 console.log("---------------");
-
 
 let allSame = [3, 3, 3];
 console.log("Test array with all same numbers:");
