@@ -15,6 +15,17 @@ function removeElement(nums, val) {
   return i;
 }
 
+const removeElement2 = function(nums, val) {
+    let writePointer = 0;
+    for(let readPointer = 0; readPointer < nums.length ; readPointer++){
+        if(nums[readPointer] !== val){
+            nums[writePointer] = nums[readPointer];
+            writePointer++;
+        }
+    }
+    return writePointer;
+};
+
 let arrEmpty = [];
 console.log("Test empty array:");
 console.log("Before:", arrEmpty); // Should print: []
