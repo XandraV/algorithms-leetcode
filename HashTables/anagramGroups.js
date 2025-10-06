@@ -1,17 +1,17 @@
-// This function groups anagrams from an array of strings            
+// This function groups anagrams from an array of strings
 function groupAnagrams(arr) {
   const anagramGroups = new Map();
   for (let str of arr) {
-    canonical = str.split("").sort().join("");
+    let canonical = str.split("").sort().join("");
     if (anagramGroups.has(canonical)) {
       anagramGroups.get(canonical).push(str);
     } else {
       anagramGroups.set(canonical, [str]);
     }
   }
-  return Array.from(anagramGroups.values());
-}
 
+  return Array.from(anagramGroups.values()); // or [...anagramGroups.values()]
+}
 
 console.log("Lowercase Anagrams:");
 console.log("Input: ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']");
