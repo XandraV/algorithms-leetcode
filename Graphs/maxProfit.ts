@@ -17,7 +17,7 @@ function mostProfitablePath(edges: number[][], amount: number[]): number {
   // depth first search to find the path from Alice to leaf nodes
   let maxProfit = -Infinity;
   console.log(graph);
-  function aliceDfsRecursive(graph, node, profitSoFar: number, parent) {
+  function aliceDfsRecursive(graph, node: number, profitSoFar: number, parent) {
     if (graph.get(node).length === 1 && node !== 0) {
       maxProfit = Math.max(profitSoFar + amount[node], maxProfit);
       return;
