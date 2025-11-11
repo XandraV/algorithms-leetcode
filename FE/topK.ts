@@ -1,5 +1,5 @@
-// Given an unsorted array of integers which might have duplicates, return the top k integers in non-ascending order.
-
+// Given an unsorted array of integers which might have duplicates, 
+// return the top k integers in non-ascending order.
 function topK(arr: number[], k: number): number[] {
   let stack = [];
   let minIndex = -1;
