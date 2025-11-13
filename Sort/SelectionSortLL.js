@@ -98,7 +98,6 @@ console.log("Sort descending list:");
 list1.printList(); // Should print: 4 -> 3 -> 2 -> 1
 list1.selectionSort();
 list1.printList(); // Should print: 1 -> 2 -> 3 -> 4
-console.log("---------------");
 
 // ------------------------------------
 //  Sort already sorted list
@@ -109,7 +108,6 @@ console.log("Sort already sorted list:");
 list2.printList(); // Should print: 1 -> 2
 list2.selectionSort();
 list2.printList(); // Should print: 1 -> 2
-console.log("---------------");
 
 // ------------------------------------
 //  Sort list with random elements
@@ -122,7 +120,6 @@ console.log("Sort list with random elements:");
 list3.printList(); // Should print: 3 -> 1 -> 4 -> 2
 list3.selectionSort();
 list3.printList(); // Should print: 1 -> 2 -> 3 -> 4
-console.log("---------------");
 
 // ------------------------------------
 //  Sort list with duplicate elements
@@ -135,7 +132,6 @@ console.log("Sort list with duplicate elements:");
 list4.printList(); // Should print: 3 -> 3 -> 2 -> 2
 list4.selectionSort();
 list4.printList(); // Should print: 2 -> 2 -> 3 -> 3
-console.log("---------------");
 
 // ------------------------------------
 //  Sort single-element list
@@ -145,7 +141,6 @@ console.log("Sort single-element list:");
 list5.printList(); // Should print: 1
 list5.selectionSort();
 list5.printList(); // Should print: 1
-console.log("---------------");
 
 // ------------------------------------
 //  Sort list with negative numbers
@@ -157,7 +152,6 @@ console.log("Sort list with negative numbers:");
 list6.printList(); // Should print: -1 -> -2 -> 1
 list6.selectionSort();
 list6.printList(); // Should print: -2 -> -1 -> 1
-console.log("---------------");
 
 // ------------------------------------
 //  Sort list with zeros
@@ -169,7 +163,6 @@ console.log("Sort list with zeros:");
 list7.printList(); // Should print: 0 -> 0 -> 1
 list7.selectionSort();
 list7.printList(); // Should print: 0 -> 0 -> 1
-console.log("---------------");
 
 // ------------------------------------
 //  Sort empty list
@@ -180,4 +173,3 @@ console.log("Sort empty list:");
 list8.printList(); // Should print: empty
 list8.selectionSort();
 list8.printList(); // Should print: empty
-console.log("---------------");

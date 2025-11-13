@@ -51,29 +51,23 @@ function longestConsecutiveSequence2(nums) {
 console.log("No Consecutive Sequence:");
 console.log("Input: [1, 3, 5]");
 console.log("Output: ", longestConsecutiveSequence([1, 3, 5]));
-console.log("---------------");
 
 console.log("Single Element:");
 console.log("Input: [1]");
 console.log("Output: ", longestConsecutiveSequence([1]));
-console.log("---------------");
 
 console.log("Consecutive Sequence:");
 console.log("Input: [1, 2, 3, 4, 5]");
 console.log("Output: ", longestConsecutiveSequence([1, 2, 3, 4, 5]));
-console.log("---------------");
 
 console.log("Unordered Input:");
 console.log("Input: [5, 2, 3, 1, 4]");
 console.log("Output: ", longestConsecutiveSequence([5, 2, 3, 1, 4]));
-console.log("---------------");
 
 console.log("Empty Array:");
 console.log("Input: []");
 console.log("Output: ", longestConsecutiveSequence([]));
-console.log("---------------");
 
 console.log("Multiple Sequences:");
 console.log("Input: [1, 2, 3, 10, 11, 12]");
 console.log("Output: ", longestConsecutiveSequence([1, 2, 3, 10, 11, 12]));
-console.log("---------------");

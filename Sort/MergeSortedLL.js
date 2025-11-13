@@ -95,7 +95,6 @@ list1.printList(); // Should print: 1 -> 3 -> 5
 list2.printList(); // Should print: 2 -> 4 -> 6
 list1.merge(list2);
 list1.printList(); // Should print: 1 -> 2 -> 3 -> 4 -> 5 -> 6
-console.log("---------------");
 
 // ------------------------------------
 //  Merge lists with duplicates
@@ -111,7 +110,6 @@ list5.printList(); // Should print: 1 -> 2 -> 3
 list6.printList(); // Should print: 1 -> 2 -> 3
 list5.merge(list6);
 list5.printList(); // Should print: 1 -> 1 -> 2 -> 2 -> 3 -> 3
-console.log("---------------");
 
 // ------------------------------------
 //  Merge lists with negative numbers
@@ -125,7 +123,6 @@ list7.printList(); // Should print: -1 -> 0
 list8.printList(); // Should print: -2 -> -1
 list7.merge(list8);
 list7.printList(); // Should print: -2 -> -1 -> -1 -> 0
-console.log("---------------");
 
 // ------------------------------------
 //  Merge lists where one is larger
@@ -140,4 +137,3 @@ list9.printList(); // Should print: 1 -> 2
 list10.printList(); // Should print: 3 -> 4 -> 5
 list9.merge(list10);
 list9.printList(); // Should print: 1 -> 2 -> 3 -> 4 -> 5
-console.log("---------------");

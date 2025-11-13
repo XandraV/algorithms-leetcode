@@ -85,7 +85,6 @@ list1.push(1);
 console.log("Convert 1011 to 11:");
 console.log("Input: 1 -> 0 -> 1 -> 1");
 console.log("Output: ", list1.binaryToDecimal());
-console.log("---------------");
 
 // ---------------
 // Convert 1100 to 12
@@ -97,7 +96,6 @@ list2.push(0);
 console.log("Convert 1100 to 12:");
 console.log("Input: 1 -> 1 -> 0 -> 0");
 console.log("Output: ", list2.binaryToDecimal());
-console.log("---------------");
 
 // ---------------
 // Convert 1 to 1
@@ -106,7 +104,6 @@ const list3 = new LinkedList(1);
 console.log("Convert 1 to 1:");
 console.log("Input: 1");
 console.log("Output: ", list3.binaryToDecimal());
-console.log("---------------");
 
 // ---------------
 // Convert empty list to 0
@@ -116,4 +113,3 @@ list4.makeEmpty();
 console.log("Convert empty list to 0:");
 console.log("Input: empty");
 console.log("Output: ", list4.binaryToDecimal());
-console.log("---------------");
