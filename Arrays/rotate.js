@@ -1,4 +1,11 @@
 // This function rotates an array nums to the right by `k` steps.
+// [1, 2, 3 | 4, 5]; rotate by 2 -> [4,5,1,2,3]
+// 3,2,1 | 5 ,4
+// 4 , 5 , 1, 2, 3
+
+// 1,2,3,4,5,6,7 to reverse swap item at start with end
+// 7,2,3,4,5,6,1
+// 7,6,5,4,3,2,1
 function rotate(nums, k) {
   // Limit k to the array size
   k = k % nums.length;
@@ -7,10 +14,10 @@ function rotate(nums, k) {
   let start = 0;
   let end = nums.length - k - 1;
   while (start < end) {
-    let temp = nums[start];
-    nums[start] = nums[end];
-    nums[end] = temp;
-
+    // let temp = nums[start];
+    // nums[start] = nums[end];
+    // nums[end] = temp;
+    [nums[start], nums[end]] = [nums[end], nums[start]];
     start++;
     end--;
   }
@@ -19,10 +26,10 @@ function rotate(nums, k) {
   start = nums.length - k;
   end = nums.length - 1;
   while (start < end) {
-    let temp = nums[start];
-    nums[start] = nums[end];
-    nums[end] = temp;
-
+    // let temp = nums[start];
+    // nums[start] = nums[end];
+    // nums[end] = temp;
+    [nums[start], nums[end]] = [nums[end], nums[start]];
     start++;
     end--;
   }
@@ -31,10 +38,10 @@ function rotate(nums, k) {
   start = 0;
   end = nums.length - 1;
   while (start < end) {
-    let temp = nums[start];
-    nums[start] = nums[end];
-    nums[end] = temp;
-
+    // let temp = nums[start];
+    // nums[start] = nums[end];
+    // nums[end] = temp;
+    [nums[start], nums[end]] = [nums[end], nums[start]];
     start++;
     end--;
   }
@@ -46,8 +53,6 @@ console.log("Before:         ", rotate1.join(", "));
 rotate(rotate1, 1);
 console.log("Expected After:  5, 1, 2, 3, 4");
 console.log("Actual After:   ", rotate1.join(", "));
-console.log("---------------");
-
 
 console.log("Rotate by array length:");
 let rotateLen = [1, 2, 3];
@@ -55,7 +60,6 @@ console.log("Before:         ", rotateLen.join(", "));
 rotate(rotateLen, 3);
 console.log("Expected After:  1, 2, 3");
 console.log("Actual After:   ", rotateLen.join(", "));
-console.log("---------------");
 
 console.log("Rotate by 0:");
 let rotateZero = [4, 3, 2, 1];
@@ -63,8 +67,6 @@ console.log("Before:         ", rotateZero.join(", "));
 rotate(rotateZero, 0);
 console.log("Expected After:  4, 3, 2, 1");
 console.log("Actual After:   ", rotateZero.join(", "));
-console.log("---------------");
-
 
 console.log("Empty array:");
 let rotateEmpty = [];
@@ -72,8 +74,6 @@ console.log("Before:         ", rotateEmpty.join(", "));
 rotate(rotateEmpty, 1);
 console.log("Expected After:  ");
 console.log("Actual After:   ", rotateEmpty.join(", "));
-console.log("---------------");
-
 
 console.log("Negative k value:");
 let rotateNeg = [5, 6, 7, 8];
@@ -81,8 +81,6 @@ console.log("Before:         ", rotateNeg.join(", "));
 rotate(rotateNeg, -1);
 console.log("Expected After:  5, 6, 7, 8");
 console.log("Actual After:   ", rotateNeg.join(", "));
-console.log("---------------");
-
 
 console.log("All same elements:");
 let rotateSame = [2, 2, 2, 2];
@@ -90,8 +88,6 @@ console.log("Before:         ", rotateSame.join(", "));
 rotate(rotateSame, 2);
 console.log("Expected After:  2, 2, 2, 2");
 console.log("Actual After:   ", rotateSame.join(", "));
-console.log("---------------");
-
 
 console.log("k larger than array size:");
 let rotateLargeK = [1, 2];
@@ -99,4 +95,3 @@ console.log("Before:         ", rotateLargeK.join(", "));
 rotate(rotateLargeK, 3);
 console.log("Expected After:  2, 1");
 console.log("Actual After:   ", rotateLargeK.join(", "));
-console.log("---------------");
