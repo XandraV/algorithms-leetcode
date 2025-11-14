@@ -38,10 +38,8 @@ class Stack {
     return this.stackList.pop();
   }
 }
-/*
-    Time Complexity: O(n)
-    Space Complexity: O(n)
-  */
+
+// Time, space complexity O(n)
 function reverseString(string) {
   const stackList = new Stack(); //O(1)
   const arrayOfChars = string.split(""); //O(n)
