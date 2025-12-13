@@ -1,4 +1,4 @@
-function bubbleSort(array) {
+function bubbleSort(array: number[]) {
   for (let i = array.length - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
       if (array[j] > array[j + 1]) {
@@ -11,17 +11,4 @@ function bubbleSort(array) {
   return array;
 }
 
-function test() {
-  let myArray = [4, 2, 6, 5, 1, 3];
-  bubbleSort(myArray);
-  console.log(myArray);
-}
-
-test();
-
-/*
-    EXPECTED OUTPUT:
-    ----------------
-    [ 1, 2, 3, 4, 5, 6 ]
-
-*/
+console.log(bubbleSort([4, 2, 6, 5, 1, 3])); // [ 1, 2, 3, 4, 5, 6 ]
