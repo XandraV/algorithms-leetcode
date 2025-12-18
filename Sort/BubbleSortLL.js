@@ -84,14 +84,12 @@ list1.push(3);
 list1.push(2);
 list1.push(1);
 console.log("Sort descending list:");
-list1.printList(); // 4 -> 3 -> 2 -> 1
 list1.bubbleSort();
 list1.printList(); // 1 -> 2 -> 3 -> 4
 
 const list2 = new LinkedList(1);
 list2.push(2);
 console.log("Sort already sorted list:");
-list2.printList(); // 1 -> 2
 list2.bubbleSort();
 list2.printList(); //  1 -> 2
 
@@ -100,7 +98,6 @@ list3.push(1);
 list3.push(4);
 list3.push(2);
 console.log("Sort list with random elements:");
-list3.printList(); // 3 -> 1 -> 4 -> 2
 list3.bubbleSort();
 list3.printList(); //  1 -> 2 -> 3 -> 4
 
@@ -109,13 +106,11 @@ list4.push(3);
 list4.push(2);
 list4.push(2);
 console.log("Sort list with duplicate elements:");
-list4.printList(); //  3 -> 3 -> 2 -> 2
 list4.bubbleSort();
 list4.printList(); //  2 -> 2 -> 3 -> 3
 
 const list5 = new LinkedList(1);
 console.log("Sort single-element list:");
-list5.printList(); // 1
 list5.bubbleSort();
 list5.printList(); //  1
 
@@ -123,7 +118,6 @@ const list6 = new LinkedList(-1);
 list6.push(-2);
 list6.push(1);
 console.log("Sort list with negative numbers:");
-list6.printList(); //  -1 -> -2 -> 1
 list6.bubbleSort();
 list6.printList(); //  -2 -> -1 -> 1
 
@@ -131,13 +125,11 @@ const list7 = new LinkedList(0);
 list7.push(0);
 list7.push(1);
 console.log("Sort list with zeros:");
-list7.printList(); // 0 -> 0 -> 1
 list7.bubbleSort();
 list7.printList(); // 0 -> 0 -> 1
 
 const list8 = new LinkedList(1);
 list8.makeEmpty();
 console.log("Sort empty list:");
-list8.printList();
 list8.bubbleSort();
 list8.printList();

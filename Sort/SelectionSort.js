@@ -13,20 +13,9 @@ function selectionSort(arr) {
       arr[min] = temp;
     }
   }
-  return arr
+  return arr;
 }
 
-function test() {
-  let myArray = [4, 2, 6, 5, 1, 3];
-  selectionSort(myArray);
-  console.log(myArray);
-}
-
-test();
-
-/*
-    EXPECTED OUTPUT:
-    ----------------
-    [ 1, 2, 3, 4, 5, 6 ]
-
-*/
+let myArray = [4, 2, 6, 5, 1, 3];
+selectionSort(myArray);
+console.log(myArray); // [ 1, 2, 3, 4, 5, 6 ]

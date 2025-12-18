@@ -58,12 +58,5 @@ function test() {
 }
 
 test();
-
-/*
-    EXPECTED OUTPUT:
-    ----------------
-    Original Array: [ 3, 1, 4, 2 ]
-
-    Sorted Array: [ 1, 2, 3, 4 ]
-
-*/
+//  Original Array: [ 3, 1, 4, 2 ]
+//  Sorted Array: [ 1, 2, 3, 4 ]

@@ -81,9 +81,6 @@ class LinkedList {
   }
 }
 
-// ------------------------------------
-//  Merge two sorted lists
-// ------------------------------------
 const list1 = new LinkedList(1);
 list1.push(3);
 list1.push(5);
@@ -91,14 +88,9 @@ const list2 = new LinkedList(2);
 list2.push(4);
 list2.push(6);
 console.log("Merge two sorted lists:");
-list1.printList(); // Should print: 1 -> 3 -> 5
-list2.printList(); // Should print: 2 -> 4 -> 6
 list1.merge(list2);
-list1.printList(); // Should print: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+list1.printList(); //  1 -> 2 -> 3 -> 4 -> 5 -> 6
 
-// ------------------------------------
-//  Merge lists with duplicates
-// ------------------------------------
 const list5 = new LinkedList(1);
 list5.push(2);
 list5.push(3);
@@ -106,34 +98,22 @@ const list6 = new LinkedList(1);
 list6.push(2);
 list6.push(3);
 console.log("Merge lists with duplicates:");
-list5.printList(); // Should print: 1 -> 2 -> 3
-list6.printList(); // Should print: 1 -> 2 -> 3
 list5.merge(list6);
-list5.printList(); // Should print: 1 -> 1 -> 2 -> 2 -> 3 -> 3
+list5.printList(); //  1 -> 1 -> 2 -> 2 -> 3 -> 3
 
-// ------------------------------------
-//  Merge lists with negative numbers
-// ------------------------------------
 const list7 = new LinkedList(-1);
 list7.push(0);
 const list8 = new LinkedList(-2);
 list8.push(-1);
 console.log("Merge lists with negative numbers:");
-list7.printList(); // Should print: -1 -> 0
-list8.printList(); // Should print: -2 -> -1
 list7.merge(list8);
-list7.printList(); // Should print: -2 -> -1 -> -1 -> 0
+list7.printList(); // -2 -> -1 -> -1 -> 0
 
-// ------------------------------------
-//  Merge lists where one is larger
-// ------------------------------------
 const list9 = new LinkedList(1);
 list9.push(2);
 const list10 = new LinkedList(3);
 list10.push(4);
 list10.push(5);
 console.log("Merge lists where one is larger:");
-list9.printList(); // Should print: 1 -> 2
-list10.printList(); // Should print: 3 -> 4 -> 5
 list9.merge(list10);
-list9.printList(); // Should print: 1 -> 2 -> 3 -> 4 -> 5
+list9.printList(); // 1 -> 2 -> 3 -> 4 -> 5
