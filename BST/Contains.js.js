@@ -68,33 +68,18 @@ class BST {
   }
 }
 
-function test() {
-  let myBST = new BST();
+let myBST = new BST();
 
-  myBST.insert(47);
-  myBST.insert(21);
-  myBST.insert(76);
-  myBST.insert(18);
-  myBST.insert(27);
-  myBST.insert(52);
-  myBST.insert(82);
+myBST.insert(47);
+myBST.insert(21);
+myBST.insert(76);
+myBST.insert(18);
+myBST.insert(27);
+myBST.insert(52);
+myBST.insert(82);
 
-  console.log("BST Contains 27:");
-  console.log(myBST.contains(27));
+console.log("BST Contains 27:");
+console.log(myBST.contains(27)); // true
 
-  console.log("\nBST Contains 17:");
-  console.log(myBST.contains(17));
-}
-
-test();
-
-/*
-    EXPECTED OUTPUT:
-    ----------------
-    BST Contains 27:
-    true
-    
-    BST Contains 17:
-    false
-
-*/
+console.log("\nBST Contains 17:");
+console.log(myBST.contains(17)); // false
