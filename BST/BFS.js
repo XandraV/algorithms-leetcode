@@ -98,11 +98,4 @@ function test() {
   console.log(myTree.BFS());
 }
 
-test();
-
-/*
-    EXPECTED OUTPUT:
-    ----------------
-    [ 47, 21, 76, 18, 27, 52, 82 ]
-
-*/
+test(); // [ 47, 21, 76, 18, 27, 52, 82 ]
