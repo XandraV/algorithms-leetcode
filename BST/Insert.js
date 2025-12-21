@@ -46,34 +46,18 @@ class BST {
   }
 }
 
-function test() {
-  let myBST = new BST();
+let myBST = new BST();
 
-  myBST.insert(2);
-  myBST.insert(1);
-  myBST.insert(3);
-
-  /*
-        THE LINES ABOVE CREATE THIS TREE:
-                     2
-                    / \
-                   1   3
-    */
-
-  console.log("Root:", myBST.root.value);
-  console.log("\nRoot->Left:", myBST.root.left.value);
-  console.log("\nRoot->Right:", myBST.root.right.value);
-}
-
-test();
+myBST.insert(2);
+myBST.insert(1);
+myBST.insert(3);
 
 /*
-    EXPECTED OUTPUT:
-    ----------------
-    Root: 2
+        2
+       / \
+      1   3
+  */
 
-    Root->Left: 1
-
-    Root->Right: 3
-
-*/
+console.log("Root:", myBST.root.value); // 2
+console.log("\nRoot->Left:", myBST.root.left.value); // 1
+console.log("\nRoot->Right:", myBST.root.right.value); // 3
