@@ -34,14 +34,14 @@ const binarySearch = function (nums, target) {
 // Example 1
 const nums1 = [1, 3, 5, 6];
 const target1 = 5;
-console.log("Test 1:", binarySearch(nums1, target1)); // Expected output: 2
+console.log("Test 1:", binarySearch(nums1, target1)); // 2
 
 // Example 2
 const nums2 = [1, 3, 5, 6];
 const target2 = 2;
-console.log("Test 2:", binarySearch(nums2, target2)); // Expected output: -1
+console.log("Test 2:", binarySearch(nums2, target2)); // -1
 
 // Example 3
 const nums3 = [1, 3, 5, 6];
 const target3 = 7;
-console.log("Test 3:", binarySearch(nums3, target3)); // Expected output: -1
+console.log("Test 3:", binarySearch(nums3, target3)); // -1
