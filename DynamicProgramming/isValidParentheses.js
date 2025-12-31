@@ -14,7 +14,7 @@ function isValid(s) {
         (c === "}" && stack[stack.length - 1] !== "{") ||
         (c === "]" && stack[stack.length - 1] !== "[")
       ) {
-        console.log(stack, "ccc", c);
+        console.log("string is not valid", c, 'stack', stack);
         return false; // the string is not valid, so return false
       }
       console.log(stack);
@@ -22,6 +22,10 @@ function isValid(s) {
     }
   }
   return !stack.length; // if the stack is empty, all opening brackets have been matched with their corresponding closing brackets,
-  // so the string is valid, otherwise, there are unmatched opening brackets, so return false
+  // so the string is valid, otherwise, there are unmatched opening brackets hence return false
 }
-console.log(isValid("[({}())}"));
+console.log(isValid("[({}())}")); // false
+console.log(isValid("()[]{}")); // true
+console.log(isValid("(]")); // false
+console.log(isValid("([)]")); // false
+console.log(isValid("{[]}")); // true
