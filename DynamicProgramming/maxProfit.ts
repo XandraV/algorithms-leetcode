@@ -4,7 +4,7 @@
 // (i.e., buy one and sell one share of the stock multiple times) with the following restrictions:
 // After you sell your stock, you cannot buy stock on the next day (i.e., cooldown one day).
 // Note: You may not engage in multiple transactions simultaneously
-// (i.e., you must sell the stock before you buy again).
+// i.e., you must sell the stock before you buy again.
 
 function maxProfit(prices: number[]): number {
   let n = prices.length;
@@ -25,5 +25,4 @@ function maxProfit(prices: number[]): number {
   return dfs(0, true);
 }
 
-console.log(maxProfit([1, 2, 3, 0, 2])); // Output: 3
-
+console.log(maxProfit([1, 2, 3, 0, 2])); // 3
