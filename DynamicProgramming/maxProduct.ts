@@ -1,6 +1,8 @@
 function maxProduct(nums: number[]): number {
   let maxSoFar = nums[0];
-  let minSoFar = nums[0]; // need minimum because if we multiply by negative number,the minimum turns into maximum
+  // need minimum because if we multiply by negative number,
+  // the minimum turns into maximum
+  let minSoFar = nums[0];
   let result = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
@@ -8,7 +10,8 @@ function maxProduct(nums: number[]): number {
 
     let temp = maxSoFar * curr;
     maxSoFar = Math.max(curr, temp, minSoFar * curr);
-    // need temp because when we pass it to maxSoFar * curr we already recalculated maxSoFar above
+    // maxSoFar is already calculated above hence we store it in temp
+    // to avoid using updated value of maxSoFar in the next line
     minSoFar = Math.min(curr, temp, minSoFar * curr);
 
     result = Math.max(result, maxSoFar);
