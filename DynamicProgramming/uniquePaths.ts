@@ -97,7 +97,7 @@ console.log(uniquePathsDP(3, 7)); // Output: 28
 // we only need the previous row and the current row to compute the values
 // we can use a single array to store the current row and update it in place
 function uniquePathsDPBest(m: number, n: number): number {
-  const dp = Array(n).fill(1); // first row
+  const dp = Array(n).fill(1); // There’s only one way to reach any cell in the first row: go right repeatedly.
 
   for (let i = 1; i < m; i++) {
     for (let j = 1; j < n; j++) {

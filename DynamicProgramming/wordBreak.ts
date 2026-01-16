@@ -11,20 +11,20 @@ function wordBreak(s: string, wordDict: string[]): boolean {
    * So for "leetcode", length 8, we need indices 0..8, not just 0..7.
    * */
   const n = s.length;
-  const result = new Array(n + 1).fill(false);
-  result[0] = true; // base case: empty string is always valid as 'word'.slice(0,0) = ''
+  const dp = new Array(n + 1).fill(false);
+  dp[0] = true; // base case: empty string is always valid as 'word'.slice(0,0) = ''
 
   for (let i = 0; i < n; i++) {
-    if (!result[i]) continue; 
+    if (!dp[i]) continue; 
     for (let j = i + 1; j <= n; j++) {
       const word = s.slice(i, j);
       if (wordDict.includes(word)) {
-        result[j] = true;
+        dp[j] = true;
       }
     }
   }
 
-  return result[n];
+  return dp[n];
 }
 
 console.log(wordBreak("leetcode", ["leet", "code"])); // true
