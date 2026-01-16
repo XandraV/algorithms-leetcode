@@ -1,6 +1,6 @@
 // Given an m x n integer matrix matrix, if an element is 0,
 // set its entire row and column to 0's.
-var setZeroes = function (matrix) {
+const setZeroes = function (matrix) {
   const numOfRows = matrix.length;
   const numOfColumns = matrix[0].length;
 

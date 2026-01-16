@@ -1,4 +1,4 @@
-var longestConsecutive = function (nums) {
+const longestConsecutive = function (nums) {
   // [100,4,200,1,3,2]
   const numSet = new Set(nums);
   let maxLength = 0;

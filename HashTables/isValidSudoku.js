@@ -1,4 +1,4 @@
-var isValidSudoku = function (board) {
+const isValidSudoku = (board) => {
   let rows = Array.from({ length: 9 }, () => new Set());
   let cols = Array.from({ length: 9 }, () => new Set());
   let boxes = Array.from({ length: 9 }, () => new Set());
@@ -56,7 +56,7 @@ var isValidSudoku = function (board) {
 */
 
 // nested for loop solution
-var isValidSudoku = function (board) {
+const isValidSudoku2 = function (board) {
   // for each index between 0-8
   // check elements of the row and column
   for (let i = 0; i < 9; i++) {

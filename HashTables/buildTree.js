@@ -23,7 +23,7 @@
 
 // postorder = [left1, left2, ..., right1, right2, ..., root] - not relevant here
 
-var buildTree = function (preorder, inorder) {
+const buildTree = function (preorder, inorder) {
   // Map each value to its index in inorder
   const inorderMap = new Map();
   for (let i = 0; i < inorder.length; i++) {
