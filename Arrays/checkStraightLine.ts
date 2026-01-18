@@ -2,6 +2,9 @@
 // represents the coordinate of a point.
 // Check if these points make a straight line in the XY plane.
 function checkStraightLine(coordinates: number[][]): boolean {
+  if (coordinates.length <= 2) return true;
+  const xDiff = coordinates[1][0] - coordinates[0][0];
+  const yDiff = coordinates[1][1] - coordinates[0][1];
   let ans = true;
   // m = (y2 - y1) / (x2 - x1)
   // r = (yi-yi-1)/ (xi-xi-1)
@@ -9,11 +12,9 @@ function checkStraightLine(coordinates: number[][]): boolean {
 
   for (let i = 2; i < coordinates.length; i++) {
     let isValid =
-      (coordinates[i][1] - coordinates[i - 1][1]) *
-        (coordinates[1][0] - coordinates[0][0]) ===
-      (coordinates[1][0] - coordinates[0][0]) *
-        (coordinates[i][0] - coordinates[i - 1][0]);
-    if (isValid) {
+      (coordinates[i][1] - coordinates[i - 1][1]) * xDiff ===
+      yDiff * (coordinates[i][0] - coordinates[i - 1][0]);
+    if (!isValid) {
       ans = false;
       break;
     }
