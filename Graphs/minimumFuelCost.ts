@@ -18,7 +18,7 @@ function minimumFuelCost(roads: number[][], seats: number): number {
     let rep = 0;
     for (let neighbour of adj[node]) {
       if (parent == neighbour) continue;
-      rep += dfs(neighbour, node, representatives);
+      rep += dfs(neighbour, node, representatives);  
     }
     if (node == 0) return 0;
     representatives += rep + 1; // adding the parent after summing all children
