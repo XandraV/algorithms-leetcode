@@ -1,10 +1,8 @@
 /*
- Find First and Last Position of Element in Sorted Array
+Find First and Last Position of Element in Sorted Array
 Given an array of integers nums sorted in non-decreasing order, 
 find the starting and ending position of a given target value.
-
 If target is not found in the array, return [-1, -1].
-
 You must write an algorithm with O(log n) runtime complexity.
  */
 // 2 x O(log n) = O(log n), O(1) space - Binary Search
@@ -20,6 +18,9 @@ const searchRange = function (nums, target) {
       if (nums[midPoint] === target) {
         bound = midPoint; // update/remembers index or bound when target is found
         if (lower) {
+          // there be another target earlier than this one because the array is sorted
+          // hence if we're looking for lower bound
+          // going lower with the higher pointer forces binary search to explore smaller indices too
           // go left
           high = midPoint - 1;
         } else {

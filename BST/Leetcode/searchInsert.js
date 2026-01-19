@@ -28,7 +28,7 @@ const binarySearch = function (nums, target) {
   }
 
   // if target is not found, return -1
-  return -1;
+  return low;
 };
 
 // Example 1
