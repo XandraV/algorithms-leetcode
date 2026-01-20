@@ -6,6 +6,7 @@ function containsNearbyDuplicate(nums: number[], k: number): boolean {
   for (let i = 0; i < nums.length; i++) {
     let curr = nums[i];
     if (seenMap.has(curr)) {
+      // check where this same number appeared before ie the idx value in the seen map
       if (i - seenMap.get(curr) <= k) return true;
     }
 
