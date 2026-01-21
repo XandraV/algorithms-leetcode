@@ -23,7 +23,7 @@
 
 // postorder = [left1, left2, ..., right1, right2, ..., root] - not relevant here
 
-var buildTree = function (preorder, inorder) {
+const buildTree = function (preorder, inorder) {
   if (!preorder.length || !inorder.length) return null;
   // Every time we take the first element of the current preorder slice
   // → that’s the root of the current subtree.
