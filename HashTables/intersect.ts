@@ -3,6 +3,7 @@
 // Each element in the result must appear
 // as many times as it shows in both arrays and you may return the result in any order.
 
+// most optimal
 function intersect1(nums1: number[], nums2: number[]): number[] {
   const res: number[] = [];
   const freq: Map<number, number> = new Map();
