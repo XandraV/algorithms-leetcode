@@ -18,6 +18,7 @@ function shortestWordDistance(
   for (let i = 0; i < wordsDict.length; i++) {
     const word = wordsDict[i];
 
+    // if word1 === word2
     if (word1 === word2 && word1Index > -1 && word === word1) {
       if (word2Index === -1) {
         word2Index = i; // first occurrence
@@ -33,7 +34,7 @@ function shortestWordDistance(
         distance = Math.min(distance, tempDistance);
       }
       word1Index = i;
-    } else if (word == word2) {
+    } else if (word === word2) {
       if (word1Index > -1) {
         tempDistance = Math.abs(word1Index - i);
         distance = Math.min(distance, tempDistance);
