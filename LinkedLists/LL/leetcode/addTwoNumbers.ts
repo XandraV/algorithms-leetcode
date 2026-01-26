@@ -15,35 +15,29 @@
  * }
  */
 
-function addTwoNumbers(
-  l1: ListNode | null,
-  l2: ListNode | null,
-): ListNode | null {
-  let dummy = new ListNode();
-  let res = dummy;
-  let carry = 0;
+function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+    let dummy = new ListNode();
+    let res = dummy;
+    let carry = 0;
 
-  let temp1 = l1;
-  let temp2 = l2;
+    while (l1 !== null || l2 !== null) {
+        let val1 = l1 ? l1.val : 0;
+        let val2 = l2 ? l2.val : 0;
 
-  while (temp1 !== null || temp2 !== null) {
-    let val1 = temp1 ? temp1.val : 0;
-    let val2 = temp2 ? temp2.val : 0;
+        let sum = val1 + val2 + carry;
+        carry = Math.floor(sum / 10);
+        sum = sum % 10;
 
-    let sum = val1 + val2 + carry;
-    carry = Math.floor(sum / 10);
-    sum = sum % 10;
+        res.next = new ListNode(sum);
+        res = res.next;
 
-    res.next = new ListNode(sum);
-    res = res.next;
+        if (l1) l1 = l1.next;
+        if (l2) l2 = l2.next;
+    }
 
-    if (temp1) temp1 = temp1.next;
-    if (temp2) temp2 = temp2.next;
-  }
+    if (carry > 0) {
+        res.next = new ListNode(carry);
+    }
 
-  if (carry > 0) {
-    res.next = new ListNode(carry);
-  }
-
-  return dummy.next;
+    return dummy.next;
 }
