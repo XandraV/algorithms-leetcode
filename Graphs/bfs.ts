@@ -1,5 +1,5 @@
 // Example graph as adjacency list
-const graph = {
+const graph: Record<string, string[]> = {
   A: ["B", "C"],
   B: ["D", "E"],
   C: ["F"],
@@ -8,16 +8,16 @@ const graph = {
   F: [],
 };
 
-function bfs(graph, start) {
-  const visited = new Set();
-  const queue = [start];
+function bfs(graph: Record<string, string[]>, start: string): void {
+  const visited: Set<string> = new Set();
+  const queue: string[] = [start];
   visited.add(start);
-  
+
   while (queue.length > 0) {
     console.log(queue);
-    const node = queue.shift();
+    const node: string | undefined = queue.shift();
 
-    if (!visited.has(node)) {
+    if (node && !visited.has(node)) {
       console.log(node); // process node
 
       // enqueue all unvisited neighbors
@@ -31,4 +31,4 @@ function bfs(graph, start) {
   }
 }
 
-console.log(bfs(graph, "A"));
+bfs(graph, "A");
