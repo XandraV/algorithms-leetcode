@@ -1,9 +1,13 @@
+// Total time complexity: O(n) because of reverse method
+// Space complexity: O(n) because of rs variable
 function isPalindrome(s: string): boolean {
   const rs = s.split("").reverse().join("");
   console.log(s === rs);
   return s === rs;
 }
 
+// Time complexity: O(n) (but can stop early)
+// Space complexity: O(1) (no extra string)
 function isPalindrome2(s: string): boolean {
   let left = 0;
   let right = s.length - 1;
@@ -23,6 +27,8 @@ function isPalindrome2(s: string): boolean {
 console.log(isPalindrome("racecar"));
 console.log(isPalindrome2("racecar"));
 
+// Time complexity: O(n)
+// Space complexity: O(n) (new array c)
 function isPalindrome3(s: string): boolean {
   const c = s
     .replace(/[^a-zA-Z0-9]/g, "")
