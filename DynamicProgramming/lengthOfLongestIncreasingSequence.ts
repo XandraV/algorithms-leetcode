@@ -15,7 +15,7 @@ function lengthOfLIS(nums: number[]): number {
     for (let j = i + 1; j < nums.length; j++) {
       if (nums[i] < nums[j]) {
         dp[i] = Math.max(dp[i], dp[j] + 1);
-        maxVal = Math.max(maxVal, dp[j] + 1);
+        maxVal = Math.max(maxVal, dp[i]);
       }
     }
   }
