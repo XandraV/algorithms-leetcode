@@ -11,17 +11,17 @@ return the index of target if it is in nums, or -1 if it is not in nums.
 You must write an algorithm with O(log n) runtime complexity.
 */
 // Complexity O(log n) time | O(1) space
-const search = function (nums, target) {
+const search = function (nums:number[], target:number):number {
   let midPoint = -1;
-  let low = 0;
-  let high = nums.length - 1;
+  let left = 0;
+  let righ = nums.length - 1;
 
-  // loop while low is less than or equal to high
-  // because when low crosses high or high crosses low
+  // loop while left is less than or equal to righ
+  // because when left crosses righ or righ crosses left
   // it means the target is not present
   // and we return -1
-  while (low <= high) {
-    midPoint = Math.floor((high + low) / 2);
+  while (left <= righ) {
+    midPoint = Math.floor((righ + left) / 2);
 
     // if target is found, return the midPoint index
     if (nums[midPoint] === target) {
@@ -30,25 +30,25 @@ const search = function (nums, target) {
 
     // check which side is sorted
     // left side is sorted
-    if (nums[low] <= nums[midPoint]) {
+    if (nums[left] <= nums[midPoint]) {
       // check if target is in the left side
-      if (nums[low] <= target && target < nums[midPoint]) {
-        // go left ie decrease high towards left=low
-        high = midPoint - 1;
+      if (nums[left] <= target && target < nums[midPoint]) {
+        // go left ie decrease righ towards left=left
+        righ = midPoint - 1;
       } else {
-        // else go right ie increase low towards right=high
-        low = midPoint + 1;
+        // else go right ie increase left towards right=righ
+        left = midPoint + 1;
       }
     }
     // right side is sorted
-    if (nums[high] >= nums[midPoint]) {
+    if (nums[righ] >= nums[midPoint]) {
       // check if target is in the right side
-      if (target <= nums[high] && nums[midPoint] < target) {
-        // go right ie increase low towards right=high
-        low = midPoint + 1;
+      if (target <= nums[righ] && nums[midPoint] < target) {
+        // go right ie increase left towards right=righ
+        left = midPoint + 1;
       } else {
-        // else go left ie decrease high towards left=low
-        high = midPoint - 1;
+        // else go left ie decrease righ towards left=left
+        righ = midPoint - 1;
       }
     }
   }
