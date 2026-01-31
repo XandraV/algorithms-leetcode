@@ -20,7 +20,7 @@ function removeDuplicates(nums: number[]): number {
 
 const nums = [1, 1, 2];
 console.log(removeDuplicates(nums));
-console.log(nums); //  [0, 0, 1, 1, 2, 2]
+console.log(nums); //  [ 1, 2, 2]
 
 function removeDuplicates2(nums: number[]): number {
   const res = new Set(nums);
