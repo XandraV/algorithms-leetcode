@@ -1,8 +1,56 @@
+function hasValidPathFromSourceToDestination(
+  n: number,
+  edges: number[][],
+  source: number,
+  destination: number,
+): boolean {
+  if (source === destination) {
+    return true;
+  }
+  const visited = new Set();
+  const adj = new Map<number, number[]>();
+
+  for (let [node, neighbor] of edges) {
+    if (adj.has(node)) {
+      adj.get(node)?.push(neighbor);
+    } else {
+      adj.set(node, [neighbor]);
+    }
+  }
+
+  function dfs(node: number) {
+    if (node === destination) return true;
+
+    if (visited.has(node)) return false;
+    visited.add(node);
+
+    for (const neighbor of adj.get(node) || []) {
+      if (dfs(neighbor)) return true;
+    }
+
+    return false;
+  }
+
+  return dfs(source);
+}
+
+console.log(
+  hasValidPathFromSourceToDestination(
+    3,
+    [
+      [0, 1],
+      [0, 2],
+    ],
+    0,
+    2,
+  ),
+);
+
 function validPath(
   n: number,
   edges: number[][],
   source: number,
-  destination: number
+  destination: number,
 ): boolean {
   const graph: number[][] = Array.from({ length: n }, () => []);
 
