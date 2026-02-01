@@ -1,31 +1,31 @@
 function minimumFuelCost(roads: number[][], seats: number): number {
-  let n = roads.length;
-  if (roads.length == 0) return 0;
+  if (roads.length === 0) return 0;
+  const adj = new Map<number, number[]>();
 
-  let adj = new Array(n);
-  for (let i = 0; i < n; i++) {
-    adj[i] = new Array();
+  for (const [a, b] of roads) {
+    adj.has(a) || adj.set(a, []);
+    adj.has(b) || adj.set(b, []);
+    adj.get(a)!.push(b);
+    adj.get(b)!.push(a);
   }
 
-  for (let road of roads) {
-    adj[road[0]].push(road[1]);
-    adj[road[1]].push(road[0]);
-  }
+  let fuel = 0;
 
-  let res = 0;
+  function dfs(node: number, parent: number): number {
+    let rep = 1; // this city's representative
 
-  let dfs = function (node: number, parent: number, representatives: number) {
-    let rep = 0;
-    for (let neighbour of adj[node]) {
-      if (parent == neighbour) continue;
-      rep += dfs(neighbour, node, representatives);  
+    for (const neighbour of adj.get(node) ?? []) {
+      if (neighbour === parent) continue;
+      rep += dfs(neighbour, node);
     }
-    if (node == 0) return 0;
-    representatives += rep + 1; // adding the parent after summing all children
-    res += Math.ceil(representatives / seats);
-    return representatives;
-  };
 
-  dfs(0, -1, 0);
-  return res;
+    if (node !== 0) {
+      fuel += Math.ceil(rep / seats);
+    }
+
+    return rep;
+  }
+
+  dfs(0, -1);
+  return fuel;
 }
