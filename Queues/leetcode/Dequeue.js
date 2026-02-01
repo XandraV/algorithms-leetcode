@@ -40,10 +40,21 @@ class MyQueue {
   }
 
   enqueue(value) {
+    // Move all existing elements from stack1 to stack2
+    // This reverses their order, exposing the "bottom" of stack1
+    // so we can insert the new element at the bottom (queue tail)
     while (!this.stack1.isEmpty()) {
       this.stack2.push(this.stack1.pop());
     }
+
+    // Push the new value onto stack1
+    // stack1 now only contains the new element
+    // which will become the last element in the queue
     this.stack1.push(value);
+
+    // Move all elements back from stack2 to stack1
+    // This restores the original order, with the new element
+    // now placed at the bottom of stack1
     while (!this.stack2.isEmpty()) {
       this.stack1.push(this.stack2.pop());
     }
@@ -58,23 +69,6 @@ class MyQueue {
       // from the queue by popping from stack1
       return this.stack1.pop();
     }
-  }
-
-  // similar to enqueue
-  dequeue2() {
-    // if the queue is empty, return null
-    if (this.stack1.isEmpty()) {
-      return null;
-    }
-    while (this.stack1.length > 1) {
-      this.stack2.push(this.stack1.pop());
-    }
-    const lastElement = this.stack1.pop();
-
-    while (!this.stack2.isEmpty()) {
-      this.stack1.push(this.stack2.pop());
-    }
-    return lastElement;
   }
 }
 
@@ -97,19 +91,3 @@ console.log("Dequeueing the third element: ", queue.dequeue());
 console.log("Is the queue empty? ", queue.isEmpty());
 
 console.log("Dequeueing from empty queue: ", queue.dequeue());
-
-/*
-    EXPECTED OUTPUT:
-    ----------------
-    Initial queue state:
-    Peek:  1
-    Is the queue empty?  false
-    Dequeueing the first element:  1
-    Peek after dequeueing:  2
-    Dequeueing the second element:  2
-    Peek after dequeueing:  3
-    Dequeueing the third element:  3
-    Is the queue empty?  true
-    Dequeueing from empty queue:  null
-
-*/
