@@ -1,6 +1,6 @@
 // You want to maximize your profit by choosing a single day
 // to buy one stock and choosing a different day in the future to sell that stock.
-function maxProfit1(prices: number[]): number {
+function maxProfit(prices: number[]): number {
   let maxProfit = -Infinity;
   let min = Infinity;
 
@@ -14,4 +14,4 @@ function maxProfit1(prices: number[]): number {
   return maxProfit > 0 ? maxProfit : 0;
 }
 
-console.log(maxProfit1([7, 1, 5, 3, 6, 4])); // 5
+console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
