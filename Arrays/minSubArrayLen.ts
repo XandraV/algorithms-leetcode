@@ -1,6 +1,6 @@
 // Given an array of positive integers nums and a positive integer target,
 // return the minimal length of a subarray whose sum is smaller than or equal to target.
-//  If there is no such subarray, return 0 instead.
+// If there is no such subarray, return 0 instead.
 
 function minSubArrayLen(target: number, nums: number[]): number {
   let left = 0;
