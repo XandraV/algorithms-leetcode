@@ -57,3 +57,50 @@ target = {a: 5, b: 0, c: 1}  // maximum we can leave
  */
 console.log(takeCharacters("aabaaaacaabc", 2));
 // 8
+
+function takeCharactersABC(s: string, k: number): number {
+  const n = s.length;
+
+  let totalA = 0,
+    totalB = 0,
+    totalC = 0;
+
+  for (const ch of s) {
+    if (ch === "a") totalA++;
+    else if (ch === "b") totalB++;
+    else totalC++;
+  }
+
+  if (totalA < k || totalB < k || totalC < k) return -1;
+
+  const targetA = totalA - k;
+  const targetB = totalB - k;
+  const targetC = totalC - k;
+
+  let left = 0;
+  let maxKeep = 0;
+
+  let countA = 0,
+    countB = 0,
+    countC = 0;
+
+  for (let right = 0; right < n; right++) {
+    const ch = s[right];
+
+    if (ch === "a") countA++;
+    else if (ch === "b") countB++;
+    else countC++;
+
+    while (countA > targetA || countB > targetB || countC > targetC) {
+      const leftChar = s[left];
+      if (leftChar === "a") countA--;
+      else if (leftChar === "b") countB--;
+      else countC--;
+      left++;
+    }
+
+    maxKeep = Math.max(maxKeep, right - left + 1);
+  }
+
+  return n - maxKeep;
+}
