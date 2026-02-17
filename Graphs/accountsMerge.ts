@@ -14,7 +14,7 @@ function accountsMerge(accounts: string[][]): string[][] {
   const graph = new Map<string, Set<string>>();
   const emailToName = new Map<string, string>();
 
-  // 1. Build graph
+  // 1. Build graph: emails-> Set(emails) it's connected to
   for (const account of accounts) {
     const name = account[0];
 
@@ -52,10 +52,10 @@ function accountsMerge(accounts: string[][]): string[][] {
   // 3. Collect components
   for (const email of graph.keys()) {
     if (!visited.has(email)) {
-      const component: string[] = [];
+      const component: string[] = []; // array of connected emails via dfs
       dfs(email, component);
       component.sort();
-      result.push([emailToName.get(email)!, ...component]);
+      result.push([emailToName.get(email)!, ...component]); // add name
     }
   }
 
