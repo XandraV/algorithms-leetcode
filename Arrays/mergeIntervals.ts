@@ -4,29 +4,28 @@
 
 function merge(intervals: number[][]): number[][] {
   const result = [];
-  const sortedIntervals = intervals.sort((a, b) => a[0] - b[0]);
+  const sorted = intervals.sort((a, b) => a[0] - b[0]); // O(n log n)
 
-  let start = sortedIntervals[0][0];
-  let end = sortedIntervals[0][1];
+  let start = sorted[0][0];
+  let end = sorted[0][1];
 
-  for (let i = 1; i < sortedIntervals.length; i++) {
-    const currentInterval = sortedIntervals[i];
-    const currentStart = currentInterval[0];
-    const currentEnd = currentInterval[1];
+  // single pass to merge O(n)
+  for (let i = 1; i < sorted.length; i++) {
+    const [currStart, currEnd] = sorted[i];
 
-    if (currentStart <= end) {
-      end = Math.max(currentEnd, end);
-    } else {
+    if (currStart > end) {
       result.push([start, end]);
-      start = currentStart;
-      end = currentEnd;
+      start = currStart;
+      end = currEnd;
+    } else {
+      end = Math.max(end, currEnd);
     }
   }
   result.push([start, end]);
   return result;
 }
 // time complexity O(n log n) due to sorting
-// space complexity O(n) for the result array
+// space complexity O(n) for creating a result array → at most n intervals in worst case → O(n)
 
 const intervals = [
   [1, 3],
