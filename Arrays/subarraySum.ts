@@ -11,16 +11,19 @@ function subarraySum(nums: number[], k: number): number {
     prefixSum[i] = prefixSum[i - 1] + nums[i];
   }
   // sum, freq of that sum
+  // store sub array sum = curr prefix sum and it's frequency
+  // add this freqency to numOfSubArrays
   const sumIdxMap = new Map<number, number>();
   sumIdxMap.set(0, 1);
   for (let j = 0; j < nums.length; j++) {
-    let complement = prefixSum[j] - k;
+    let curr = prefixSum[j];
+    let complement = curr - k;
     let complementFreq = sumIdxMap.get(complement) ?? 0;
 
     if (complementFreq > 0) {
       numOfSubArrays += complementFreq;
     }
-    sumIdxMap.set(prefixSum[j], (sumIdxMap.get(prefixSum[j]) ?? 0) + 1);
+    sumIdxMap.set(curr, (sumIdxMap.get(curr) ?? 0) + 1);
   }
 
   return numOfSubArrays;
