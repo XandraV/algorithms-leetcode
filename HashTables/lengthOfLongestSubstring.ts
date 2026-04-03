@@ -10,7 +10,7 @@ const lengthOfLongestSubstring = function (s: string) {
     let idxOfChar = memo.get(char);
 
     // if char seen inside current window
-    // move start index ie left pointer right after the duplicate char index ie idxOfChar
+    // move start index ie left pointer after the first occurence of this (duplicate) char ie idxOfChar
     if (idxOfChar !== undefined && idxOfChar >= left) {
       left = idxOfChar + 1;
     }
