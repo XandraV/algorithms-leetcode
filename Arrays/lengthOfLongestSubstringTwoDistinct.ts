@@ -16,6 +16,7 @@ function lengthOfLongestSubstringTwoDistinct(s: string): number {
     freq.set(curr, (freq.get(curr) ?? 0) + 1);
 
     while (freq.size > 2) {
+      // if we have more than 2 distinct characters, we need to shrink the window
       const leftChar = s[left];
       freq.set(leftChar, freq.get(leftChar)! - 1);
 
@@ -25,7 +26,7 @@ function lengthOfLongestSubstringTwoDistinct(s: string): number {
 
       left++;
     }
-
+    // Update the max length of the substring
     maxLength = Math.max(maxLength, right - left + 1);
   }
 
