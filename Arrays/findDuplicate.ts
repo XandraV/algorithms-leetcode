@@ -44,8 +44,9 @@ console.log(findDuplicate([3, 1, 3, 4, 2])); // 3
 
 // efficient solution, O(n log n) time and O(1) space
 function findDuplicate3(nums: number[]): number {
-  nums.sort((a, b) => a - b);
+  nums.sort((a, b) => a - b); // O(nlogn)
   for (let i = 0; i < nums.length; i++) {
+    // O(n)
     if (nums[i] == nums[i - 1]) return nums[i];
   }
   return -1;
