@@ -15,6 +15,7 @@ function maxSubArrayLen(nums: number[], k: number): number {
     if (!sumIdxMap.has(currSum)) {
       sumIdxMap.set(currSum, i);
     }
+    // prefix sum - current sub array sum = k <- solution subarray sum is k
     //  p[i] - sumToLookup = k
     // If a subarray from index j+1 to i sums to k, then:
     //  p[i] - p[j] = k
