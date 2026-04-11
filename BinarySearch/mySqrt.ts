@@ -1,13 +1,11 @@
-/*
-Given a non-negative integer x
-return the square root of x rounded down to the nearest integer. 
-The returned integer should be non-negative as well.
-You must not use any built-in exponent function or operator.
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
-Constraint: 0 <= x <= 231 - 1
-*/
+// Given a non-negative integer x
+// return the square root of x rounded down to the nearest integer.
+// The returned integer should be non-negative as well.
+// You must not use any built-in exponent function or operator.
+// Constraint: 0 <= x <= 231 - 1
+
 // Complexity O(log n) time | O(1) space
-const mySqrt = function (x) {
+const mySqrt = function (x: number): number {
   if (x < 2) return x; // shortcut for 0 and 1
 
   let low = 0;

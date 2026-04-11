@@ -5,7 +5,7 @@
  You must write an algorithm with O(log n) runtime complexity.
  */
 // Complexity is O(log n), O(1) space - Binary Search
-const binarySearch = function (nums, target) {
+const binarySearch = function (nums: number[], target: number): number {
   let midPoint = -1;
   let low = 0;
   let high = nums.length - 1;
