@@ -17,6 +17,13 @@ function hasValidPathFromSourceToDestination(
       adj.set(node, [neighbor]);
     }
   }
+  // Correct undirected version
+  // for (let [u, v] of edges) {
+  //   if (!adj.has(u)) adj.set(u, []);
+  //   if (!adj.has(v)) adj.set(v, []);
+  //   adj.get(u)!.push(v);
+  //   adj.get(v)!.push(u);
+  // }
 
   function dfs(node: number) {
     if (node === destination) return true;
