@@ -10,6 +10,7 @@ const graph: Record<string, string[]> = {
 
 function bfs(graph: Record<string, string[]>, start: string): void {
   const visited: Set<string> = new Set();
+  // store [node, path length or count]
   const queue: string[] = [start];
   visited.add(start);
 
