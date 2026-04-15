@@ -4,12 +4,12 @@ function numIslands(grid: string[][]): number {
 
   function dfs(i: number, j: number) {
     if (
-      i < 0 ||
-      i >= grid.length ||
-      j < 0 ||
-      j >= grid[0].length ||
-      grid[i][j] === "0" ||
-      visited.has(`${i}-${j}`)
+      i < 0 || // row in bound
+      i >= grid.length || // row in bound
+      j < 0 || // col in bound
+      j >= grid[0].length || // col in bound
+      grid[i][j] === "0" || // water?
+      visited.has(`${i}-${j}`) // visited
     ) {
       return false;
     }
@@ -19,6 +19,8 @@ function numIslands(grid: string[][]): number {
     dfs(i - 1, j);
     dfs(i, j - 1);
     dfs(i, j + 1);
+
+    return true
   }
 
   for (let i = 0; i < grid.length; i++) {
@@ -33,7 +35,7 @@ function numIslands(grid: string[][]): number {
   return numOfIslands;
 }
 
-// complecity is only O(n*m) because each cell is visited at most once
+// complexity is only O(n*m) because each cell is visited at most once
 // even though we try 4 directions, each neighbor is processed only once overall
 
 console.log(
