@@ -29,10 +29,15 @@ function findItinerary(tickets: string[][]): string[] {
     dests.sort();
   }
 
+// Why while instead of a for loop with visited set ?
+// There is no visited set because you are allowed to visit 
+// the same airport multiple times.
+// The "visited" state is tracked by consuming the tickets. 
+// dests.shift() literally deletes the ticket from the graph
   function dfs(airport: string) {
     const dests = graph.get(airport);
     while (dests && dests.length > 0) {
-      const next = dests.shift()!; // take the lex smallest unused ticket
+      const next = dests.shift()!; // take the lex smallest unused ticket - delete neighbour frm graph
       dfs(next);
     }
     itenary.push(airport); // push after visiting all edges

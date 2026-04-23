@@ -20,8 +20,7 @@ const longestValidParentheses = (s) => {
       if (stack.length === 0) {
         stack.push(i); // we reset base index
       } else {
-        // stack.at(-1) returns last element in the stack
-        // which is the last elements index after unmatching/popping
+        // at -1 is the last elements index after unmatching/popping
 
         // stack stores the indices of parentheses that don’t yet have a match
         // hence the last element of the stack is the index of the last unmatched paren
