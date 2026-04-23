@@ -1,12 +1,48 @@
+// 163. Missing Ranges
 // You are given an inclusive range [lower, upper] and a sorted unique integer array nums,
-//  where all elements are within the inclusive range.
+// where all elements are within the inclusive range.
 // A number x is considered missing if x is in the range [lower, upper] and x is not in nums.
 
 // Return the shortest sorted list of ranges that exactly covers all the missing numbers.
 // That is, no element of nums is included in any of the ranges, and each missing number is
 // covered by one of the ranges.
-
 function findMissingRanges(
+    nums: number[],
+    lower: number,
+    upper: number,
+): number[][] {
+    const results: number[][] = [];
+
+    if (nums.length === 0) {
+        return [[lower, upper]];
+    }
+
+    // Handle the gap BEFORE the first element 
+    if (nums[0] > lower) {
+        results.push([lower, nums[0] - 1]);
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+        let curr = nums[i];
+        let next = nums[i + 1];
+
+        // Handle gap between current and next
+        if (next !== undefined && next > curr + 1) {
+            results.push([curr + 1, next - 1]);
+        }
+
+        // Handle the gap AFTER the last element
+        // Using 'i === nums.length - 1 instead of !next
+        // because next could be 0 (which is falsy)
+        if (i === nums.length - 1 && curr < upper) {
+            results.push([curr + 1, upper]);
+        }
+    }
+
+    return results;
+}
+
+function findMissingRanges3(
   nums: number[],
   lower: number,
   upper: number,
