@@ -5,17 +5,6 @@
 // A root-to-leaf path is a path starting from the root and ending at any leaf node.
 // A leaf is a node with no children.
 
-class TreeNode {
-  val: number;
-  left: TreeNode | null;
-  right: TreeNode | null;
-  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.left = left === undefined ? null : left;
-    this.right = right === undefined ? null : right;
-  }
-}
-
 function pathSum(root: TreeNode | null, targetSum: number): number[][] {
   const result: number[][] = [];
 

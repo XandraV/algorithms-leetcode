@@ -1,6 +1,6 @@
 // BFS - shortest path
 // Given an undirected graph, return the shortest path between source and target node
-// If there is no path between A dn B, return -1
+// If there is no path between A and B, return -1
 const shortestPath = (
   edges: string[][],
   source: string,
