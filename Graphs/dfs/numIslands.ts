@@ -20,7 +20,7 @@ function numIslands(grid: string[][]): number {
     dfs(i, j - 1);
     dfs(i, j + 1);
 
-    return true
+    return true;
   }
 
   for (let i = 0; i < grid.length; i++) {
@@ -47,3 +47,53 @@ console.log(
   ]),
 );
 // 3
+
+function numIslands2(grid: string[][]): number {
+  let count = 0;
+  const visited: Set<string> = new Set(); // `${i},${j}`
+
+  function dfs(i: number, j: number) {
+    if (
+      i < 0 ||
+      i >= grid.length ||
+      j < 0 ||
+      j >= grid[0].length ||
+      grid[i][j] === "0"
+    ) {
+      return;
+    }
+
+    const dir = [
+      [i - 1, j], // up
+      [i + 1, j], // down
+      [i, j - 1], // left
+      [i, j + 1], // right
+    ];
+
+    for (let [ni, nj] of dir) {
+      if (
+        ni >= 0 &&
+        ni < grid.length &&
+        j >= 0 &&
+        j < grid[0].length &&
+        !visited.has(`${ni},${nj}`) &&
+        grid[ni][nj] === "1"
+      ) {
+        visited.add(`${ni},${nj}`);
+        dfs(ni, nj);
+      }
+    }
+  }
+
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[0].length; j++) {
+      if (!visited.has(`${i},${j}`) && grid[i][j] === "1") {
+        visited.add(`${i},${j}`);
+        dfs(i, j);
+        count++;
+      }
+    }
+  }
+
+  return count;
+}
