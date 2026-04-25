@@ -17,11 +17,16 @@ function coinChange(coins: number[], amount: number): number {
     // Take the best way to make i - coin ie dp[i-coin]
     // Add this one coin to it -> dp[i-coin] + 1
     for (let coin of coins) {
+      // dp[i - coin] is a count of coins. It represents the "fewest coins" we used to reach a smaller amount.
+      // When we decide to use a specific coin to get to your current target i,
+      // we are physically picking up one additional coin and adding it to the pile we already had.
       if (i - coin >= 0) {
         // check coin is not too large
         // take minimum of dp[i] and dp[i - coin] + 1 because we are trying multiple coins
         // so we will keep overiding dp[i] until we find the minimum
         dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+        // not adding coin because dp stores coin count, ie the Index (i) = amount of money
+        // and the value of (dp[i]) = quantity of coins needed to make that amount of money.
       }
     }
   }
