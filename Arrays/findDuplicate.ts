@@ -3,7 +3,7 @@
  * Medium
  *
  * Given an array nums containing n + 1 integers where each integer
- * is between 1 and n (inclusive), there is **only one repeated number**.
+ * is between 1 and n (inclusive), there is only one repeated number.
  *
  * Return this duplicate number.
  *
@@ -11,9 +11,6 @@
  * - You must not modify the array (read-only)
  * - You must use only constant extra space (O(1))
  * - Your runtime complexity should be less than O(n^2)
- 
- * Hint:
- * - You can use cycle detection (Floyd's Tortoise and Hare) to find the duplicate.
  */
 
 // hybrid approach  between:
