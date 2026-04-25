@@ -24,7 +24,7 @@ function findMaxLength(nums: number[]): number {
   return maxLen;
 }
 
-// console.log(findMaxLength([0, 1, 1, 1, 1, 1, 0, 0, 0])); // 6
+console.log(findMaxLength([0, 1, 1, 1, 1, 1, 0, 0, 0])); // 6
 // The 3 key ideas:
 // 1. Treat 0 as -1 — so a subarray with equal 0s and 1s has a sum of 0.
 // 2. Build a running prefix sum — if prefixSum[j] === prefixSum[i], then the subarray [j+1..i] sums to 0 (equal 0s and 1s).

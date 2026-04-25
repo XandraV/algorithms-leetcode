@@ -1,5 +1,5 @@
 // 78. Subsets
-// Given an integer array nums of unique elements, return all 
+// Given an integer array nums of unique elements, return all
 // possible subsets (the power set).
 // The solution set must not contain duplicate subsets.
 // Return the solution in any order.
@@ -8,10 +8,11 @@ function subsets(nums: number[]): number[][] {
   const path: number[] = [];
 
   function backtrack(start: number) {
-    // add current subset
+    // Add current subset
+    // Every state we reach is a valid subset.
     result.push([...path]);
-    console.log(path);
 
+    // Iterate through the remaining candidates
     for (let i = start; i < nums.length; i++) {
       // choose
       path.push(nums[i]);

@@ -13,7 +13,8 @@ function maxProduct(nums: number[]): number {
     let curr = nums[i];
     let tempMax = maxEndingHere[i - 1] * curr; // multiply with current
     let tempMin = minEndingHere[i - 1] * curr; // multiply with current
-
+    // By keeping track of minEndingHere, we carrying
+    // the potential for a future double-negative flip.
     minEndingHere[i] = Math.min(tempMax, tempMin, curr);
     maxEndingHere[i] = Math.max(tempMax, tempMin, curr);
     maxSoFar = Math.max(maxSoFar, maxEndingHere[i]); // only compare with max

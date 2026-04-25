@@ -1,5 +1,6 @@
-// dp[i][j] answers the question: how big a square of 1s can I finish here?
+// dp[i][j] how big a square of 1s can I finish here?
 // dp[i][j] = largest square of 1s ending at (i, j)
+// ie side length of the largest square ending at (i, j)
 function maximalSquare(matrix: string[][]): number {
   let maxSize = 0;
   const n = matrix.length;
@@ -16,11 +17,17 @@ function maximalSquare(matrix: string[][]): number {
         if (i === 0 || j === 0) {
           dp[i][j] = 1;
         } else {
-          // the square is only as big as its smallest side
+          // The square is only as big as its smallest side
           // to grow a square of size k, we need all three directions to support size k-1
           // if any one of top,left, topLeft is smaller, the square cannot grow further
-          dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
-          maxSize = Math.max(maxSize, dp[i][j]);
+          // The square exists iff:
+          // the square above exists (dp[i-1][j])
+          // the square to the left exists (dp[i][j-1])
+          // the square diagonally exists (dp[i-1][j-1])
+          // The smallest one limits the size.
+         dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]); 
+         
+         maxSize = Math.max(maxSize, dp[i][j]);
         }
       }
     }

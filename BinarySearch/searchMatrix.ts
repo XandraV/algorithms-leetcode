@@ -1,4 +1,4 @@
-// You are given an m x n integer matrix matrix with the following two properties:
+// You are given an m x n integer matrix with the following two properties:
 
 // Each row is sorted in non-decreasing order.
 // The first integer of each row is greater than the last integer of the previous row.
@@ -7,7 +7,7 @@
 // You must write a solution in O(log(m * n)) time complexity.
 function searchMatrix(matrix: number[][], target: number): boolean {
   for (let row of matrix) {
-    // wordt case target is in last row -> O(m)
+    // worst case target is in last row -> O(m)
     let last = row[row.length - 1];
     if (target <= last) {
       if (target === last) {
