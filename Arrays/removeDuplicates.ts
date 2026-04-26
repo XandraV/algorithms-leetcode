@@ -47,3 +47,17 @@ function removeDuplicates3(nums: number[]): number {
   // to remove duplicates remove everything after writePointer nums.slice(0,writePointer)
   return writePointer;
 }
+
+function removeDuplicates(nums: number[]): number {
+  let lastUniqueIdx = 0; // insert spot of the unique element - at 0 it's unique so we start j at 1
+  for (let nextUniqueIdx = 1; nextUniqueIdx < nums.length; nextUniqueIdx++) {
+    // nextUniqueIdx candidate
+    if (nums[lastUniqueIdx] !== nums[nextUniqueIdx]) {
+      // insert nextUniqueIdx after lastUniqueIdx ie move the pointer then insert
+      lastUniqueIdx++;
+      nums[lastUniqueIdx] = nums[nextUniqueIdx];
+    }
+  }
+
+  return lastUniqueIdx + 1; // number of unique
+}
