@@ -26,3 +26,23 @@ function productExceptSelf(nums: number[]): number[] {
 }
 
 console.log(productExceptSelf([1, 2, 3, 4])); // [24,12,8,6]
+
+function productExceptSelf2(nums: number[]): number[] {
+  const leftProduct = new Array(nums.length).fill(1);
+  leftProduct[0] = nums[0];
+  const rightProduct = new Array(nums.length).fill(1);
+  rightProduct[nums.length - 1] = nums[nums.length - 1];
+
+  for (let i = 1, j = nums.length - 2; i < nums.length, j >= 0; i++, j--) {
+    leftProduct[i] = leftProduct[i - 1] * nums[i];
+    rightProduct[j] = rightProduct[j + 1] * nums[j];
+  }
+
+  const result: number[] = [];
+
+  for (let k = 0; k < nums.length; k++) {
+    result[k] = (leftProduct[k - 1] ?? 1) * (rightProduct[k + 1] ?? 1);
+  }
+
+  return result;
+}
