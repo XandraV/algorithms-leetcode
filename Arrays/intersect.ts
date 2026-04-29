@@ -23,7 +23,7 @@ function intersect(nums1: number[], nums2: number[]): number[] {
     // }
 
     if (freq.has(num)) {
-      const f = freq.get(num);
+      const f = freq.get(num)!;
       if (f > 0) {
         res.push(num);
         freq.set(num, f - 1);
