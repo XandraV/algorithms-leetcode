@@ -2,6 +2,7 @@
 // Given an array nums of distinct integers, return all the possible permutations.
 // You can return the answer in any order.
 function permute(nums: number[]): number[][] {
+  const used: boolean[] = new Array(nums.length).fill(false); // track used numbers
   const permutations: number[][] = [];
 
   function backtrack(path: number[]) {
@@ -10,12 +11,15 @@ function permute(nums: number[]): number[][] {
     }
 
     for (let i = 0; i < nums.length; i++) {
+      if (used[i]) continue; // skip if already in path
       let next = nums[i];
-      if (path.includes(nums[i])) continue;
+      used[i] = true;
+      // if (path.includes(nums[i])) continue; don't need this if we have used array to track used numbers
 
       path.push(next);
       backtrack(path);
       path.pop();
+      used[i] = false;
     }
   }
 
