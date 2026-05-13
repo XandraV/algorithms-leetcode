@@ -17,7 +17,6 @@ function maxDepth(root: TreeNode | null): number {
 }
 
 // updates maxDepth at every null child (which includes internal nodes with one child), 
-// and uses a closure variable.
 function maxDepth2(root: TreeNode | null): number {
   let maxDepth = 0;
   function dfs(node: TreeNode | null, depth: number) {
