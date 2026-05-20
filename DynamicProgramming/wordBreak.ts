@@ -5,12 +5,6 @@
  * Note that the same word in the dictionary may be reused multiple times in the segmentation.
  */
 function wordBreak(s: string, wordDict: string[]): boolean {
-  /** We use n + 1 because:
-   * Index 0 represents “start of string” (empty prefix).
-   * Index n represents “end of string”.
-   * We need both.
-   * So for "leetcode", length 8, we need indices 0..8, not just 0..7.
-   * */
   const wordSet = new Set(wordDict); // instead of array look up which is O(n) use set
   const n = s.length;
   // dp[i] = can s[0..i-1] be segmented using wordDict?
